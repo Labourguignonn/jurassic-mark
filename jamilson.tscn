@@ -1,3 +1,81 @@
-[gd_scene format=3 uid="uid://c7138adt51px2"]
+[gd_scene load_steps=11 format=3 uid="uid://c7138adt51px2"]
 
-[node name="jamilson" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://bhpoqg34oygou" path="res://assests/Sprites/Shoom_Idle.png" id="1_aqcv3"]
+[ext_resource type="Script" path="res://Player.gd" id="1_pjhsn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33dkx"]
+atlas = ExtResource("1_aqcv3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srkmu"]
+atlas = ExtResource("1_aqcv3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hdw1"]
+atlas = ExtResource("1_aqcv3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7720"]
+atlas = ExtResource("1_aqcv3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwk1y"]
+atlas = ExtResource("1_aqcv3")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_st6bs"]
+atlas = ExtResource("1_aqcv3")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vtt1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33dkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srkmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hdw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7720")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwk1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_st6bs")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8e6n"]
+size = Vector2(1298, 16)
+
+[node name="Player" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+scale = Vector2(2.52, 2.52)
+script = ExtResource("1_pjhsn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(0.793651, -3.57143)
+sprite_frames = SubResource("SpriteFrames_vtt1i")
+animation = &"idle"
+frame_progress = 0.655152
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+position = Vector2(25, -2.38095)
+scale = Vector2(0.771895, 0.761636)
+polygon = PackedVector2Array(-16, -14.5, -16, -12.7, -10, -5.7, -10, 4, -12.4, 4, -19, 8.1, -19, 9.7, -17.6, 18, -19.9, 18, -25.9, 27, -40, 27, -40, 24.6, -46, 15.6, -46, 9.7, -45.7, 8.9, -54, 3, -54, -6, -52.7, -6, -51.6, -11, -49.8, -11, -44.8, -16, -41.1, -16, -35, -17.5, -35, -19.6)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(4, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(525, 428)
+shape = SubResource("RectangleShape2D_p8e6n")

@@ -1,7 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://c7138adt51px2"]
 
-[ext_resource type="Texture2D" uid="uid://bhpoqg34oygou" path="res://assests/Sprites/Shoom_Idle.png" id="1_aqcv3"]
+[ext_resource type="Texture2D" path="res://assests/Sprites/Shoom_Idle.png" id="1_aqcv3"]
 [ext_resource type="Script" path="res://Player.gd" id="1_pjhsn"]
+[ext_resource type="Texture2D" uid="uid://o3mjjslchtxt" path="res://assests/Trees/birch_3.png" id="3_n4u5a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_33dkx"]
 atlas = ExtResource("1_aqcv3")
@@ -53,9 +54,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p8e6n"]
-size = Vector2(1298, 16)
-
 [node name="Player" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
@@ -66,9 +64,10 @@ script = ExtResource("1_pjhsn")
 position = Vector2(0.793651, -3.57143)
 sprite_frames = SubResource("SpriteFrames_vtt1i")
 animation = &"idle"
-frame_progress = 0.655152
+frame_progress = 0.872738
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+visible = false
 position = Vector2(25, -2.38095)
 scale = Vector2(0.771895, 0.761636)
 polygon = PackedVector2Array(-16, -14.5, -16, -12.7, -10, -5.7, -10, 4, -12.4, 4, -19, 8.1, -19, 9.7, -17.6, 18, -19.9, 18, -25.9, 27, -40, 27, -40, 24.6, -46, 15.6, -46, 9.7, -45.7, 8.9, -54, 3, -54, -6, -52.7, -6, -51.6, -11, -49.8, -11, -44.8, -16, -41.1, -16, -35, -17.5, -35, -19.6)
@@ -76,6 +75,41 @@ polygon = PackedVector2Array(-16, -14.5, -16, -12.7, -10, -5.7, -10, 4, -12.4, 4
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(4, -5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(525, 428)
-shape = SubResource("RectangleShape2D_p8e6n")
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-15, 486)
+scale = Vector2(1.23502, 1.25095)
+texture = ExtResource("3_n4u5a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(-14, 486)
+scale = Vector2(-12.1731, 19.5488)
+polygon = PackedVector2Array(9.61139, 0.0511551, 11.583, -1.995, 11.1722, -4.4504, 8.37916, -5.42232, 5.66825, -5.47348, 4.51817, -5.06425, 4.68247, -6.70117, 3.45024, -7.31502, 2.54661, -8.28695, 0.164297, -8.18464, -1.97157, -8.69618, -3.12165, -7.57079, -3.61454, -6.65002, -5.50396, -6.3431, -5.99685, -5.83156, -6.65404, -4.70617, -6.90048, -3.63193, -8.37916, -3.17155, -9.20064, -2.25077, -9.93998, -0.920771, -11.0079, 0.511541, -11.0901, 1.2277, -10.1864, 2.45539, -8.21486, 4.09232, -7.22908, 3.42732, -6.90048, 3.99002, -5.25751, 4.80848, -3.12165, 5.78041, -3.12165, 8.28695, 0.0821486, 8.44041, 0.328594, 6.44541, 1.72512, 5.98502, 3.69669, 5.32002, 5.25751, 4.75732, 6.40759, 4.24578, 8.29701, 3.68309, 9.11849, 2.5577)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(4, -5)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(223, 477)
+scale = Vector2(1.23502, 1.25095)
+texture = ExtResource("3_n4u5a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+visible = false
+position = Vector2(-14, 486)
+scale = Vector2(-12.1731, 19.5488)
+polygon = PackedVector2Array(9.61139, 0.0511551, 11.583, -1.995, 11.1722, -4.4504, 8.37916, -5.42232, 5.66825, -5.47348, 4.51817, -5.06425, 4.68247, -6.70117, 3.45024, -7.31502, 2.54661, -8.28695, 0.164297, -8.18464, -1.97157, -8.69618, -3.12165, -7.57079, -3.61454, -6.65002, -5.50396, -6.3431, -5.99685, -5.83156, -6.65404, -4.70617, -6.90048, -3.63193, -8.37916, -3.17155, -9.20064, -2.25077, -9.93998, -0.920771, -11.0079, 0.511541, -11.0901, 1.2277, -10.1864, 2.45539, -8.21486, 4.09232, -7.22908, 3.42732, -6.90048, 3.99002, -5.25751, 4.80848, -3.12165, 5.78041, -3.12165, 8.28695, 0.0821486, 8.44041, 0.328594, 6.44541, 1.72512, 5.98502, 3.69669, 5.32002, 5.25751, 4.75732, 6.40759, 4.24578, 8.29701, 3.68309, 9.11849, 2.5577)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(4, -5)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(463, 488)
+scale = Vector2(1.23502, 1.25095)
+texture = ExtResource("3_n4u5a")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
+visible = false
+position = Vector2(-14, 486)
+scale = Vector2(-12.1731, 19.5488)
+polygon = PackedVector2Array(9.61139, 0.0511551, 11.583, -1.995, 11.1722, -4.4504, 8.37916, -5.42232, 5.66825, -5.47348, 4.51817, -5.06425, 4.68247, -6.70117, 3.45024, -7.31502, 2.54661, -8.28695, 0.164297, -8.18464, -1.97157, -8.69618, -3.12165, -7.57079, -3.61454, -6.65002, -5.50396, -6.3431, -5.99685, -5.83156, -6.65404, -4.70617, -6.90048, -3.63193, -8.37916, -3.17155, -9.20064, -2.25077, -9.93998, -0.920771, -11.0079, 0.511541, -11.0901, 1.2277, -10.1864, 2.45539, -8.21486, 4.09232, -7.22908, 3.42732, -6.90048, 3.99002, -5.25751, 4.80848, -3.12165, 5.78041, -3.12165, 8.28695, 0.0821486, 8.44041, 0.328594, 6.44541, 1.72512, 5.98502, 3.69669, 5.32002, 5.25751, 4.75732, 6.40759, 4.24578, 8.29701, 3.68309, 9.11849, 2.5577)

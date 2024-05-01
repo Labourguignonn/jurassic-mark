@@ -1,31 +1,24 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7138adt51px2"]
+[gd_scene load_steps=10 format=3 uid="uid://c7138adt51px2"]
 
-[ext_resource type="Texture2D" path="res://assests/Sprites/Shoom_Idle.png" id="1_aqcv3"]
-[ext_resource type="Script" path="res://Player.gd" id="1_pjhsn"]
-[ext_resource type="Texture2D" uid="uid://o3mjjslchtxt" path="res://assests/Trees/birch_3.png" id="3_n4u5a"]
+[ext_resource type="Script" path="res://Player.gd" id="1_4p2kd"]
+[ext_resource type="Texture2D" uid="uid://o3mjjslchtxt" path="res://assests/Trees/birch_3.png" id="2_62ced"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_33dkx"]
-atlas = ExtResource("1_aqcv3")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_srkmu"]
-atlas = ExtResource("1_aqcv3")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3hdw1"]
-atlas = ExtResource("1_aqcv3")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l7720"]
-atlas = ExtResource("1_aqcv3")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mwk1y"]
-atlas = ExtResource("1_aqcv3")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_st6bs"]
-atlas = ExtResource("1_aqcv3")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vtt1i"]
@@ -58,7 +51,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" parent="."]
 scale = Vector2(2.52, 2.52)
-script = ExtResource("1_pjhsn")
+script = ExtResource("1_4p2kd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(0.793651, -3.57143)
@@ -78,7 +71,7 @@ position = Vector2(4, -5)
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 position = Vector2(-15, 486)
 scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("3_n4u5a")
+texture = ExtResource("2_62ced")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
@@ -92,7 +85,7 @@ position = Vector2(4, -5)
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
 position = Vector2(223, 477)
 scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("3_n4u5a")
+texture = ExtResource("2_62ced")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 visible = false
@@ -106,7 +99,7 @@ position = Vector2(4, -5)
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
 position = Vector2(463, 488)
 scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("3_n4u5a")
+texture = ExtResource("2_62ced")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D3"]
 visible = false

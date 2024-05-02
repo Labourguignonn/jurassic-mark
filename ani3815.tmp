@@ -183,7 +183,7 @@ animations = [{
 "speed": 16.0
 }, {
 "frames": [{
-"duration": 12.0,
+"duration": 16.0,
 "texture": SubResource("AtlasTexture_a2yvf")
 }, {
 "duration": 1.0,
@@ -214,7 +214,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"pop",
-"speed": 8.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -252,14 +252,14 @@ size = Vector2(0.018125, 0.342712)
 [node name="Player" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(980, 369)
+position = Vector2(528, 64)
 scale = Vector2(2.52, 2.52)
 script = ExtResource("1_4p2kd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(-0.79364, -0.793648)
 sprite_frames = SubResource("SpriteFrames_vtt1i")
-animation = &"peek"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
@@ -268,69 +268,17 @@ position = Vector2(24.2064, 1.19048)
 scale = Vector2(0.771895, 0.761636)
 polygon = PackedVector2Array(-16, -14.5, -12.8523, -10.9414, -10, -5.7, -10, 4, -12.4, 4, -19, 8.1, -19, 9.7, -17.9932, 17.7146, -20.5637, 22.4037, -25.7046, 27.6139, -41.1274, 27.0929, -42.1556, 22.9248, -45.2401, 17.7146, -45.7542, 7.29424, -49.3529, 5.73119, -55.0079, 2.08407, -55.522, -5.73119, -52.7, -6, -51.6, -11, -49.3529, -14.0675, -44.8, -16, -41.1, -16, -35, -17.5, -35, -19.6)
 
-[node name="Floor" type="StaticBody2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(552, 572)
 scale = Vector2(8.36, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 modulate = Color(0.0235294, 0.0705882, 1, 1)
 position = Vector2(2, -1)
 scale = Vector2(1.23502, 1.25095)
 texture = ExtResource("3_uwgtf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-visible = false
-position = Vector2(2, 0)
-scale = Vector2(8717.24, 466.864)
-shape = SubResource("RectangleShape2D_vbssl")
-
-[node name="LWall" type="StaticBody2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(-2.99997, 302)
-scale = Vector2(1, 4.48)
-
-[node name="Sprite2D" type="Sprite2D" parent="LWall"]
-modulate = Color(0.0235294, 0.0705882, 1, 1)
-position = Vector2(2, -1)
-scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("3_uwgtf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LWall"]
-visible = false
-position = Vector2(2, 0)
-scale = Vector2(8717.24, 466.864)
-shape = SubResource("RectangleShape2D_vbssl")
-
-[node name="RWall" type="StaticBody2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(1153, 301)
-scale = Vector2(1, 4.48)
-
-[node name="Sprite2D" type="Sprite2D" parent="RWall"]
-modulate = Color(0.0235294, 0.0705882, 1, 1)
-position = Vector2(2, -1)
-scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("3_uwgtf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RWall"]
-visible = false
-position = Vector2(2, 0)
-scale = Vector2(8717.24, 466.864)
-shape = SubResource("RectangleShape2D_vbssl")
-
-[node name="Wall" type="StaticBody2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(798, 1726)
-scale = Vector2(1, 20.0704)
-
-[node name="Sprite2D" type="Sprite2D" parent="Wall"]
-modulate = Color(0.0235294, 0.0705882, 1, 1)
-position = Vector2(2, -1)
-scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("3_uwgtf")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
 position = Vector2(2, 0)
 scale = Vector2(8717.24, 466.864)

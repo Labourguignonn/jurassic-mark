@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bb8256pao1wtt"]
+[gd_scene load_steps=41 format=3 uid="uid://bb8256pao1wtt"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4p2kd"]
 [ext_resource type="Texture2D" uid="uid://b1e2r7gf3qbdj" path="res://assests/Player/Shoom_Hide.png" id="2_7fppt"]
@@ -249,6 +249,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vbssl"]
 size = Vector2(0.018125, 0.342712)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm6na"]
+
 [node name="PlayerScene" type="Node2D"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
@@ -341,3 +343,12 @@ visible = false
 position = Vector2(2, 0)
 scale = Vector2(8717.24, 466.864)
 shape = SubResource("RectangleShape2D_vbssl")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(1050, 269)
+shape = SubResource("RectangleShape2D_hm6na")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("3_uwgtf")

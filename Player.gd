@@ -11,6 +11,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var doubleJump = false
 var is_hiding = false
 var is_facing_right = true
+var can_move = true
+var animation_timer = 0.0
 
 func _physics_process(delta):
 	var sprite = $AnimatedSprite2D
@@ -19,11 +21,14 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("hide") and is_on_floor() and !is_hiding:
 		sprite.play("hide")
 		is_hiding = true
+		can_move = false
 		
 	# Pop Action (Unhide)
 	if Input.is_action_just_pressed("pop") and is_hiding:
 		sprite.play("pop")
 		is_hiding = false
+		animation_timer = 0.3
+		
 	
 	# Idle animations normally and when hiding
 	if velocity.x == 0 and velocity.y == 0 and !$AnimatedSprite2D.is_playing():
@@ -39,15 +44,23 @@ func _physics_process(delta):
 	elif is_on_wall_only() and Input.is_action_pressed("move"): 
 		velocity.y += (0.3 * gravity * delta)
 		velocity.y = min(velocity.y, 0.1 * gravity)
-	move(delta)
+		
+	if can_move:
+		move(delta)
+	elif is_hiding:
+		apply_drag(delta)
+	elif animation_timer > 0.0:
+		animation_timer -= delta
+	else:
+		can_move = true
+
 	if Input.is_action_just_pressed("jump"):
 		jump()
 	move_and_slide()
 	
-	
-	
 func move(delta):
 	if is_hiding:
+		print("drag")
 		apply_drag(delta)
 		return
 	
@@ -84,7 +97,6 @@ func jump():
 	# Wall jumping
 	elif is_on_wall(): 
 		velocity.x = -MAX_SPEED if is_facing_right else MAX_SPEED
-		print(velocity.x)
 		$AnimatedSprite2D.set_flip_h(!$AnimatedSprite2D.is_flipped_h())
 		is_facing_right = !is_facing_right
 	# Jumping in the air	
@@ -93,7 +105,6 @@ func jump():
 	# No jump	
 	else: return
 	
-	print("a")
 	velocity.y = JUMP_VELOCITY
 		
 		

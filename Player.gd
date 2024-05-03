@@ -47,7 +47,9 @@ func _physics_process(delta):
 	
 	
 func move(delta):
-	if is_hiding: return
+	if is_hiding:
+		apply_drag(delta)
+		return
 	
 	var direction = get_x_direction()
 	var sprite = $AnimatedSprite2D
@@ -60,17 +62,20 @@ func move(delta):
 		sprite.set_flip_h(!flipped)
 		is_facing_right = !is_facing_right
 		
-	if is_on_floor():
+	if is_on_floor():	
 		velocity.x = direction * SPEED
 		velocity.x *= 2 if Input.is_key_pressed(KEY_SHIFT) else 1
 	else:
-		velocity.x *=  (1 - DRAG) ** delta
+		apply_drag(delta)
 		velocity.x = velocity.x + direction * AIR_ACCELERATION * delta
 		velocity.x = min(max(-MAX_SPEED, velocity.x), MAX_SPEED)
 		 
 		
 func get_x_direction():
 	return Input.get_axis("move_left", "move_right")
+
+func apply_drag(delta):
+	velocity.x *= (1 - DRAG) ** delta
 
 func jump():
 	# Jumping from the floor		

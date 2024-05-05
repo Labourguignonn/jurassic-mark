@@ -27,6 +27,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("pop") and is_hiding:
 		sprite.play("pop")
 		is_hiding = false
+		$CrouchHitBox.disabled = true
+		$StandingHitBox.disabled = false
 		#animation_timer = 0.3
 		
 	# Idle animations normally and when hiding
@@ -67,14 +69,17 @@ func move(delta):
 	var flipped = sprite.is_flipped_h()
 	var sprite_direction = 1 if !flipped else -1
 	
+	if $CrouchHitBox.disabled and is_hiding and sprite.get_frame() == 7:
+		print("entrou")
+		$StandingHitBox.disabled = true
+		$CrouchHitBox.disabled = false
+	
 	if direction: 
 		if !is_hiding:
-			$StandingHitBox.disabled = false
-			$CrouchHitBox.disabled = true
 			sprite.play("walk")
 		else:
-			$StandingHitBox.disabled = true
-			$CrouchHitBox.disabled = false
+			# Implement crouch animation
+			pass
 			
 	if direction != 0 and sprite_direction != direction:
 		sprite.set_flip_h(!flipped)

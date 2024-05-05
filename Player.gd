@@ -67,8 +67,12 @@ func move(delta):
 	
 	if direction: 
 		if !is_hiding:
+			$StandingHitBox.disabled = false
+			$CrouchHitBox.disabled = true
 			sprite.play("walk")
 		else:
+			$StandingHitBox.disabled = true
+			$CrouchHitBox.disabled = false
 			sprite.set_animation("hide")
 			sprite.set_frame(8)
 	if direction != 0 and sprite_direction != direction:

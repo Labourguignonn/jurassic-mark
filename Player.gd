@@ -21,7 +21,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("hide") and is_on_floor() and !is_hiding:
 		sprite.play("hide")
 		is_hiding = true
-		can_move = false
+		can_move = true
 		
 	# Pop Action (Unhide)
 	if Input.is_action_just_pressed("pop") and is_hiding:
@@ -29,7 +29,6 @@ func _physics_process(delta):
 		is_hiding = false
 		animation_timer = 0.3
 		
-	
 	# Idle animations normally and when hiding
 	if velocity.x == 0 and velocity.y == 0 and !$AnimatedSprite2D.is_playing():
 		if !is_hiding: $AnimatedSprite2D.play("idle")
@@ -39,6 +38,7 @@ func _physics_process(delta):
 	velocity.y += gravity * delta
 	if is_on_floor():
 		velocity.y = 0
+		doubleJump = true
 		
 	# Wall Sliding
 	elif is_on_wall_only() and Input.is_action_pressed("move"): 
@@ -59,18 +59,18 @@ func _physics_process(delta):
 	move_and_slide()
 	
 func move(delta):
-	if is_hiding:
-		print("drag")
-		apply_drag(delta)
-		return
 	
 	var direction = get_x_direction()
 	var sprite = $AnimatedSprite2D
 	var flipped = sprite.is_flipped_h()
 	var sprite_direction = 1 if !flipped else -1
 	
-	if direction: sprite.play("walk")
-	
+	if direction: 
+		if !is_hiding:
+			sprite.play("walk")
+		else:
+			sprite.set_animation("hide")
+			sprite.set_frame(8)
 	if direction != 0 and sprite_direction != direction:
 		sprite.set_flip_h(!flipped)
 		is_facing_right = !is_facing_right

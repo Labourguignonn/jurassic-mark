@@ -27,7 +27,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("pop") and is_hiding:
 		sprite.play("pop")
 		is_hiding = false
-		animation_timer = 0.3
+		#animation_timer = 0.3
 		
 	# Idle animations normally and when hiding
 	if velocity.x == 0 and velocity.y == 0 and !$AnimatedSprite2D.is_playing():
@@ -47,6 +47,8 @@ func _physics_process(delta):
 		
 	if can_move:
 		move(delta)
+	
+	### Deprecated, will never excecute, as can_move is constant true
 	elif is_hiding:
 		apply_drag(delta)
 	elif animation_timer > 0.0:
@@ -69,8 +71,9 @@ func move(delta):
 		if !is_hiding:
 			sprite.play("walk")
 		else:
-			sprite.set_animation("hide")
-			sprite.set_frame(8)
+			# Add crouch walk animation
+			pass
+			
 	if direction != 0 and sprite_direction != direction:
 		sprite.set_flip_h(!flipped)
 		is_facing_right = !is_facing_right

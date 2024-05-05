@@ -69,6 +69,8 @@ func move(delta):
 	
 	if direction: 
 		if !is_hiding:
+			$StandingHitBox.disabled = false
+			$CrouchHitBox.disabled = true
 			sprite.play("walk")
 		else:
 			# Add crouch walk animation

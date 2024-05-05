@@ -298,7 +298,7 @@ shape = SubResource("RectangleShape2D_vbssl")
 
 [node name="Wall" type="StaticBody2D" parent="Level"]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(384, -743)
+position = Vector2(385, -743)
 scale = Vector2(0.77123, 14.6124)
 
 [node name="Sprite2D" type="Sprite2D" parent="Level/Wall"]

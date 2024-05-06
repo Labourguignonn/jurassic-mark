@@ -1,6 +1,7 @@
 extends CharacterBody2D
  
 const SPEED = 300.0
+const CROUCH_SPEED = 150.0
 const MAX_SPEED = 500.0
 const AIR_ACCELERATION = 2000.0
 const JUMP_VELOCITY = -700.0
@@ -24,11 +25,12 @@ func _physics_process(delta):
 		can_move = true
 		
 	# Pop Action (Unhide)
-	if Input.is_action_just_pressed("pop") and is_hiding:
-		sprite.play("pop")
-		is_hiding = false
-		$CrouchHitBox.disabled = true
-		$StandingHitBox.disabled = false
+	if (Input.is_action_just_pressed("pop") or !is_on_floor()) and is_hiding:
+		if can_stand():
+			sprite.play("pop")
+			is_hiding = false
+			$CrouchHitBox.disabled = true
+			$StandingHitBox.disabled = false
 		#animation_timer = 0.3
 		
 	# Idle animations normally and when hiding
@@ -70,7 +72,6 @@ func move(delta):
 	var sprite_direction = 1 if !flipped else -1
 	
 	if $CrouchHitBox.disabled and is_hiding and sprite.get_frame() == 7:
-		print("entrou")
 		$StandingHitBox.disabled = true
 		$CrouchHitBox.disabled = false
 	
@@ -86,8 +87,9 @@ func move(delta):
 		is_facing_right = !is_facing_right
 		
 	if is_on_floor():	
-		velocity.x = direction * SPEED
+		velocity.x = direction * CROUCH_SPEED if is_hiding else direction * SPEED ##change velocity if crouching
 		velocity.x *= 2 if Input.is_key_pressed(KEY_SHIFT) else 1
+		
 	else:
 		apply_drag(delta)
 		velocity.x = velocity.x + direction * AIR_ACCELERATION * delta
@@ -116,7 +118,9 @@ func jump():
 	else: return
 	
 	velocity.y = JUMP_VELOCITY
-		
-		
+
+func can_stand() -> bool:
+	var result = !$CrouchRaycast1.is_colliding() and !$CrouchRaycast2.is_colliding()	
+	return result	
 			
 

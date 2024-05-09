@@ -28,6 +28,7 @@ func _physics_process(delta):
 	if (Input.is_action_just_pressed("pop") or !is_on_floor()) and is_hiding:
 		if can_stand():
 			sprite.play("pop")
+			print("tchau")
 			is_hiding = false
 			$CrouchHitBox.disabled = true
 			$StandingHitBox.disabled = false
@@ -86,9 +87,12 @@ func move(delta):
 		sprite.set_flip_h(!flipped)
 		is_facing_right = !is_facing_right
 		
-	if is_on_floor():	
-		velocity.x = direction * CROUCH_SPEED if is_hiding else direction * SPEED ##change velocity if crouching
-		velocity.x *= 2 if Input.is_key_pressed(KEY_SHIFT) else 1
+	if is_on_floor():
+		if !is_hiding:
+				velocity.x = direction * SPEED
+				velocity.x *= 2 if Input.is_key_pressed(KEY_SHIFT) else 1
+		else:
+			velocity.x = direction * CROUCH_SPEED	
 		
 	else:
 		apply_drag(delta)

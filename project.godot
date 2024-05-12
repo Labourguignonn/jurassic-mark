@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Jurassic Mark (título provisório)"
-run/main_scene="res://animes.tscn"
+run/main_scene="res://Player.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 run/max_fps=30
 config/icon="res://icon.svg"
@@ -58,7 +58,7 @@ move={
 
 [physics]
 
-2d/default_gravity=2000.0
+2d/default_gravity=1580.0
 
 [rendering]
 

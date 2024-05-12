@@ -1,0 +1,798 @@
+[gd_resource type="TileSet" load_steps=145 format=3 uid="uid://bp5fgok5xmy4y"]
+
+[ext_resource type="Texture2D" uid="uid://br5samt4lr5mm" path="res://assests/tilesets/1 Tiles/Tile_01.png" id="1_naxmr"]
+[ext_resource type="Texture2D" uid="uid://2w2numspknt5" path="res://assests/tilesets/1 Tiles/Tile_02.png" id="2_7pkis"]
+[ext_resource type="Texture2D" uid="uid://da1cgxfjydtep" path="res://assests/tilesets/1 Tiles/Tile_11.png" id="3_43bjc"]
+[ext_resource type="Texture2D" uid="uid://bbhl0y75f4xts" path="res://assests/tilesets/1 Tiles/Tile_12.png" id="4_6u2xw"]
+[ext_resource type="Texture2D" uid="uid://d0tmmpffllbrc" path="res://assests/tilesets/1 Tiles/Tile_13.png" id="5_4ibvq"]
+[ext_resource type="Texture2D" uid="uid://02ee0xcaqh6s" path="res://assests/tilesets/1 Tiles/Tile_14.png" id="6_scm5x"]
+[ext_resource type="Texture2D" uid="uid://dwgykn6x08r5e" path="res://assests/tilesets/1 Tiles/Tile_15.png" id="7_cpt0w"]
+[ext_resource type="Texture2D" uid="uid://de14fctbudl7y" path="res://assests/tilesets/1 Tiles/Tile_16.png" id="8_0jgui"]
+[ext_resource type="Texture2D" uid="uid://dpebgyv67o0kd" path="res://assests/tilesets/1 Tiles/Tile_17.png" id="9_xnvnr"]
+[ext_resource type="Texture2D" uid="uid://dr46lbsckvt22" path="res://assests/tilesets/1 Tiles/Tile_18.png" id="10_t82se"]
+[ext_resource type="Texture2D" uid="uid://qyeqlu8reguy" path="res://assests/tilesets/1 Tiles/Tile_19.png" id="11_jpwhl"]
+[ext_resource type="Texture2D" uid="uid://dr63j423gvtsi" path="res://assests/tilesets/1 Tiles/Tile_20.png" id="12_whd3x"]
+[ext_resource type="Texture2D" uid="uid://duiv5hq4gux0w" path="res://assests/tilesets/1 Tiles/Tile_03.png" id="13_l6kk0"]
+[ext_resource type="Texture2D" uid="uid://dai7ybjievf45" path="res://assests/tilesets/1 Tiles/Tile_21.png" id="14_1t1ox"]
+[ext_resource type="Texture2D" uid="uid://bb31qvuep11gf" path="res://assests/tilesets/1 Tiles/Tile_22.png" id="15_fxhsn"]
+[ext_resource type="Texture2D" uid="uid://cd3nwcpyq07sl" path="res://assests/tilesets/1 Tiles/Tile_23.png" id="16_lwmr5"]
+[ext_resource type="Texture2D" uid="uid://535c273b0jii" path="res://assests/tilesets/1 Tiles/Tile_24.png" id="17_th0w4"]
+[ext_resource type="Texture2D" uid="uid://bsclfcd5tdquk" path="res://assests/tilesets/1 Tiles/Tile_25.png" id="18_ukr4l"]
+[ext_resource type="Texture2D" uid="uid://cmbuusxydyxw" path="res://assests/tilesets/1 Tiles/Tile_26.png" id="19_vc5s5"]
+[ext_resource type="Texture2D" uid="uid://cvi1ldj5nmait" path="res://assests/tilesets/1 Tiles/Tile_27.png" id="20_ruibk"]
+[ext_resource type="Texture2D" uid="uid://bu7ct051mtgj3" path="res://assests/tilesets/1 Tiles/Tile_28.png" id="21_k8bqj"]
+[ext_resource type="Texture2D" uid="uid://cw5myprcnfek5" path="res://assests/tilesets/1 Tiles/Tile_29.png" id="22_n6i8f"]
+[ext_resource type="Texture2D" uid="uid://b4pmgiewkvdv1" path="res://assests/tilesets/1 Tiles/Tile_30.png" id="23_k4wch"]
+[ext_resource type="Texture2D" uid="uid://1f0v4yvm8xmk" path="res://assests/tilesets/1 Tiles/Tile_04.png" id="24_ariwy"]
+[ext_resource type="Texture2D" uid="uid://clue11ilib1ms" path="res://assests/tilesets/1 Tiles/Tile_31.png" id="25_jvmlr"]
+[ext_resource type="Texture2D" uid="uid://5n262gvesisf" path="res://assests/tilesets/1 Tiles/Tile_32.png" id="26_affw3"]
+[ext_resource type="Texture2D" uid="uid://dctbl75v2prtl" path="res://assests/tilesets/1 Tiles/Tile_33.png" id="27_1kxr6"]
+[ext_resource type="Texture2D" uid="uid://ddybi5lq40tvg" path="res://assests/tilesets/1 Tiles/Tile_34.png" id="28_2ps6b"]
+[ext_resource type="Texture2D" uid="uid://knfjatr8yjwm" path="res://assests/tilesets/1 Tiles/Tile_35.png" id="29_dm4mo"]
+[ext_resource type="Texture2D" uid="uid://nmkcr8w0bt3r" path="res://assests/tilesets/1 Tiles/Tile_36.png" id="30_y2o0d"]
+[ext_resource type="Texture2D" uid="uid://dndkgiogxmbpf" path="res://assests/tilesets/1 Tiles/Tile_37.png" id="31_1m5kl"]
+[ext_resource type="Texture2D" uid="uid://o7fdld0l2o0c" path="res://assests/tilesets/1 Tiles/Tile_38.png" id="32_aet8w"]
+[ext_resource type="Texture2D" uid="uid://gp7ktaiax7j6" path="res://assests/tilesets/1 Tiles/Tile_39.png" id="33_2sn04"]
+[ext_resource type="Texture2D" uid="uid://cvsqptae73qwm" path="res://assests/tilesets/1 Tiles/Tile_40.png" id="34_hsitr"]
+[ext_resource type="Texture2D" uid="uid://bp7isdb6wdkau" path="res://assests/tilesets/1 Tiles/Tile_05.png" id="35_y3ws1"]
+[ext_resource type="Texture2D" uid="uid://bvlpgef0jiv6" path="res://assests/tilesets/1 Tiles/Tile_41.png" id="36_nd0un"]
+[ext_resource type="Texture2D" uid="uid://fms8mrvafqbi" path="res://assests/tilesets/1 Tiles/Tile_42.png" id="37_k5l7r"]
+[ext_resource type="Texture2D" uid="uid://dbab4sfmahhee" path="res://assests/tilesets/1 Tiles/Tile_43.png" id="38_m032r"]
+[ext_resource type="Texture2D" uid="uid://d0uqnflgs60j6" path="res://assests/tilesets/1 Tiles/Tile_44.png" id="39_rw2mr"]
+[ext_resource type="Texture2D" uid="uid://dcnnyymai626u" path="res://assests/tilesets/1 Tiles/Tile_45.png" id="40_jw0kt"]
+[ext_resource type="Texture2D" uid="uid://cpf0t6jrpqfw6" path="res://assests/tilesets/1 Tiles/Tile_46.png" id="41_rn1qm"]
+[ext_resource type="Texture2D" uid="uid://b3n8tk8ey0i0f" path="res://assests/tilesets/1 Tiles/Tile_47.png" id="42_yoq5f"]
+[ext_resource type="Texture2D" uid="uid://degnwq83w8hgw" path="res://assests/tilesets/1 Tiles/Tile_48.png" id="43_7id0g"]
+[ext_resource type="Texture2D" uid="uid://dgv7filqo8c0p" path="res://assests/tilesets/1 Tiles/Tile_49.png" id="44_lduy3"]
+[ext_resource type="Texture2D" uid="uid://bmkrl81uotxjf" path="res://assests/tilesets/1 Tiles/Tile_50.png" id="45_r68p8"]
+[ext_resource type="Texture2D" uid="uid://ddtqh84hxofbc" path="res://assests/tilesets/1 Tiles/Tile_06.png" id="46_bvn32"]
+[ext_resource type="Texture2D" uid="uid://bxjx8ta8n5crl" path="res://assests/tilesets/1 Tiles/Tile_51.png" id="47_sc4ql"]
+[ext_resource type="Texture2D" uid="uid://bw106e2ew3apd" path="res://assests/tilesets/1 Tiles/Tile_52.png" id="48_yhggb"]
+[ext_resource type="Texture2D" uid="uid://3xiq3dgkxf7e" path="res://assests/tilesets/1 Tiles/Tile_53.png" id="49_4dnlq"]
+[ext_resource type="Texture2D" uid="uid://db7n6vxx04oyl" path="res://assests/tilesets/1 Tiles/Tile_54.png" id="50_ifd1b"]
+[ext_resource type="Texture2D" uid="uid://bp1c2rcb8dx2y" path="res://assests/tilesets/1 Tiles/Tile_55.png" id="51_isk0a"]
+[ext_resource type="Texture2D" uid="uid://ckc1gyk8ordig" path="res://assests/tilesets/1 Tiles/Tile_56.png" id="52_ujy4u"]
+[ext_resource type="Texture2D" uid="uid://df1xfl5eh35lu" path="res://assests/tilesets/1 Tiles/Tile_57.png" id="53_xxm1y"]
+[ext_resource type="Texture2D" uid="uid://bilwkib32for1" path="res://assests/tilesets/1 Tiles/Tile_58.png" id="54_k3ijs"]
+[ext_resource type="Texture2D" uid="uid://bvcroskx1pdlj" path="res://assests/tilesets/1 Tiles/Tile_59.png" id="55_fp51d"]
+[ext_resource type="Texture2D" uid="uid://mrnlmouqlfc3" path="res://assests/tilesets/1 Tiles/Tile_60.png" id="56_ohwjr"]
+[ext_resource type="Texture2D" uid="uid://v6v8gbknx26c" path="res://assests/tilesets/1 Tiles/Tile_07.png" id="57_fl4cm"]
+[ext_resource type="Texture2D" uid="uid://bb7s7ec422kch" path="res://assests/tilesets/1 Tiles/Tile_61.png" id="58_3d3px"]
+[ext_resource type="Texture2D" uid="uid://dry3ycqlodpgl" path="res://assests/tilesets/1 Tiles/Tile_62.png" id="59_mlkmi"]
+[ext_resource type="Texture2D" uid="uid://c3kkurhjxmtb6" path="res://assests/tilesets/1 Tiles/Tile_63.png" id="60_24w2s"]
+[ext_resource type="Texture2D" uid="uid://1gs5re8wvcmi" path="res://assests/tilesets/1 Tiles/Tile_64.png" id="61_kmt6n"]
+[ext_resource type="Texture2D" uid="uid://cenwwhfn2uifi" path="res://assests/tilesets/1 Tiles/Tile_65.png" id="62_tclrl"]
+[ext_resource type="Texture2D" uid="uid://d3jpwpw3vmejv" path="res://assests/tilesets/1 Tiles/Tile_66.png" id="63_k7jqg"]
+[ext_resource type="Texture2D" uid="uid://cflo8j28vo4uu" path="res://assests/tilesets/1 Tiles/Tile_67.png" id="64_ga0ke"]
+[ext_resource type="Texture2D" uid="uid://cg8ik4g6sfpmd" path="res://assests/tilesets/1 Tiles/Tile_68.png" id="65_0yjap"]
+[ext_resource type="Texture2D" uid="uid://51iqvhq76krg" path="res://assests/tilesets/1 Tiles/Tile_69.png" id="66_b4g6f"]
+[ext_resource type="Texture2D" uid="uid://b3uyaswjy4pim" path="res://assests/tilesets/1 Tiles/Tile_70.png" id="67_yk567"]
+[ext_resource type="Texture2D" uid="uid://bim2vdh1jv667" path="res://assests/tilesets/1 Tiles/Tile_08.png" id="68_l6es3"]
+[ext_resource type="Texture2D" uid="uid://lsreti00on4h" path="res://assests/tilesets/1 Tiles/Tile_71.png" id="69_sckyo"]
+[ext_resource type="Texture2D" uid="uid://dn3hebk7fpm1b" path="res://assests/tilesets/1 Tiles/Tile_72.png" id="70_hfqie"]
+[ext_resource type="Texture2D" uid="uid://csbsppygwfag4" path="res://assests/tilesets/1 Tiles/Tile_09.png" id="71_uwxnk"]
+[ext_resource type="Texture2D" uid="uid://baavfdd3op65e" path="res://assests/tilesets/1 Tiles/Tile_10.png" id="72_kb6ev"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fw4g"]
+resource_name = "GrassTopLeftCorner"
+texture = ExtResource("1_naxmr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_52qeu"]
+resource_name = "GrassTopSurface"
+texture = ExtResource("2_7pkis")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdpn2"]
+resource_name = "RockTopSurface02"
+texture = ExtResource("3_43bjc")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ycmv"]
+resource_name = "RockTopRightCorner01"
+texture = ExtResource("4_6u2xw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ve5a"]
+resource_name = "RockLeftSurface01"
+texture = ExtResource("5_4ibvq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2j7yh"]
+resource_name = "RockMiddle02"
+texture = ExtResource("6_scm5x")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lpnv2"]
+resource_name = "RockMiddle03"
+texture = ExtResource("7_cpt0w")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ioujq"]
+resource_name = "RockRightSurface01"
+texture = ExtResource("8_0jgui")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5f2pk"]
+resource_name = "RockVerticalSurface01"
+texture = ExtResource("9_xnvnr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41yom"]
+resource_name = "GrassBlock"
+texture = ExtResource("10_t82se")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cjo27"]
+resource_name = "RockMiddle04"
+texture = ExtResource("11_jpwhl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5flp1"]
+resource_name = "RockMiddle05"
+texture = ExtResource("12_whd3x")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ks51"]
+resource_name = "GrassTopRightCorner"
+texture = ExtResource("13_l6kk0")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipnqh"]
+resource_name = "RockLeftCorner"
+texture = ExtResource("14_1t1ox")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nrib"]
+resource_name = "RockHorizontalSurface"
+texture = ExtResource("15_fxhsn")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dy1yt"]
+resource_name = "RockRightCorner"
+texture = ExtResource("16_lwmr5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ub1qj"]
+resource_name = "RockMiddle06"
+texture = ExtResource("17_th0w4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5cgw6"]
+resource_name = "RockBottomLeftCorner01"
+texture = ExtResource("18_ukr4l")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8w5ta"]
+resource_name = "RockBottomSurface01"
+texture = ExtResource("19_vc5s5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6cbg6"]
+resource_name = "RockBottomSurface02"
+texture = ExtResource("20_ruibk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3dyu3"]
+resource_name = "RockBottomRightCorner01"
+texture = ExtResource("21_k8bqj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjk24"]
+resource_name = "RockBottomCorner"
+texture = ExtResource("22_n6i8f")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vd7o1"]
+resource_name = "RockBlock"
+texture = ExtResource("23_k4wch")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikp1i"]
+resource_name = "RockMiddle01"
+texture = ExtResource("24_ariwy")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qrclk"]
+resource_name = "GrassRockRightGradient"
+texture = ExtResource("25_jvmlr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1h24j"]
+resource_name = "GrassRockLeftGradient"
+texture = ExtResource("26_affw3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lw4xc"]
+resource_name = "GrassRockGradientTopSurface01"
+texture = ExtResource("27_1kxr6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rroi1"]
+resource_name = "GrassRockGradientTopSurface02"
+texture = ExtResource("28_2ps6b")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bbi0w"]
+resource_name = "RockMiddle07"
+texture = ExtResource("29_dm4mo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eyir8"]
+resource_name = "RockMiddle08"
+texture = ExtResource("30_y2o0d")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ktltj"]
+resource_name = "RockMiddle09"
+texture = ExtResource("31_1m5kl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kg2pa"]
+resource_name = "RockMiddle10"
+texture = ExtResource("32_aet8w")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_imxyq"]
+resource_name = "RockMiddle11"
+texture = ExtResource("33_2sn04")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv6wj"]
+resource_name = "RockMiddle12"
+texture = ExtResource("34_hsitr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qs2xo"]
+resource_name = "GrassTopCorner"
+texture = ExtResource("35_y3ws1")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cc6r7"]
+resource_name = "RockRightSurface02"
+texture = ExtResource("36_nd0un")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq224"]
+resource_name = "GrassRightSlope"
+texture = ExtResource("37_k5l7r")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnd85"]
+resource_name = "GrassLeftSlope"
+texture = ExtResource("38_m032r")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kfwij"]
+resource_name = "RockPlatformLeftCorner"
+texture = ExtResource("39_rw2mr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0qf5"]
+resource_name = "RockPlatformMiddle"
+texture = ExtResource("40_jw0kt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_33mpl"]
+resource_name = "RockPlatformRightCorner"
+texture = ExtResource("41_rn1qm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oh5yt"]
+resource_name = "RockPlatform"
+texture = ExtResource("42_yoq5f")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jc2e2"]
+resource_name = "RockTopCorner"
+texture = ExtResource("43_7id0g")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5dcpx"]
+resource_name = "GrassPlatformLeftCorner"
+texture = ExtResource("44_lduy3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1b31o"]
+resource_name = "GrassPlatformMiddle"
+texture = ExtResource("45_r68p8")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gernn"]
+resource_name = "GrassLeftCorner"
+texture = ExtResource("46_bvn32")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cdqf4"]
+resource_name = "GrassPlatformRightCorner"
+texture = ExtResource("47_sc4ql")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_01hw4"]
+resource_name = "GrassPlatform"
+texture = ExtResource("48_yhggb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8kgnv"]
+resource_name = "RockLeftSurface02"
+texture = ExtResource("49_4dnlq")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6flly"]
+resource_name = "GrassMiddle01"
+texture = ExtResource("50_ifd1b")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m1ta1"]
+resource_name = "GrassMiddle02"
+texture = ExtResource("51_isk0a")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nj07d"]
+resource_name = "RockLeftCeiling"
+texture = ExtResource("52_ujy4u")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ps6sk"]
+resource_name = "RockMiddleCeiling"
+texture = ExtResource("53_xxm1y")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kk2rv"]
+resource_name = "RockRightCeiling"
+texture = ExtResource("54_k3ijs")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l01ps"]
+resource_name = "RockCeilingDrop"
+texture = ExtResource("55_fp51d")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gckxx"]
+resource_name = "RockVerticalSurface02"
+texture = ExtResource("56_ohwjr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cwfgg"]
+resource_name = "GrassHorizontalSurface"
+texture = ExtResource("57_fl4cm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dvr81"]
+resource_name = "RockLeftSurface03"
+texture = ExtResource("58_3d3px")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cs3id"]
+resource_name = "RockRightSurface03"
+texture = ExtResource("59_mlkmi")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhkdo"]
+resource_name = "RockLeftSurface04"
+texture = ExtResource("60_24w2s")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ce6y"]
+resource_name = "RockRightSurface04"
+texture = ExtResource("61_kmt6n")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_veegv"]
+resource_name = "RockLeftSurface05"
+texture = ExtResource("62_tclrl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xvjx5"]
+resource_name = "RockRightSurface05"
+texture = ExtResource("63_k7jqg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bli7y"]
+resource_name = "RockBottomLeftCorner02"
+texture = ExtResource("64_ga0ke")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x7mvd"]
+resource_name = "RockBottomRightCorner02"
+texture = ExtResource("65_0yjap")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4rob"]
+resource_name = "RockBottomLeftCorner03"
+texture = ExtResource("66_b4g6f")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xh8ub"]
+resource_name = "RockBottomRightCorner03"
+texture = ExtResource("67_yk567")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ud2q3"]
+resource_name = "GrassRightCorner"
+texture = ExtResource("68_l6es3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_37bv8"]
+resource_name = "RockTopLeftCorner02"
+texture = ExtResource("69_sckyo")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8mdmx"]
+resource_name = "RockTopRightCorner02"
+texture = ExtResource("70_hfqie")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov3ai"]
+resource_name = "RockTopLeftCorner01"
+texture = ExtResource("71_uwxnk")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wc82q"]
+resource_name = "RockTopSurface01"
+texture = ExtResource("72_kb6ev")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_1fw4g")
+sources/1 = SubResource("TileSetAtlasSource_52qeu")
+sources/2 = SubResource("TileSetAtlasSource_8ks51")
+sources/3 = SubResource("TileSetAtlasSource_ikp1i")
+sources/4 = SubResource("TileSetAtlasSource_qs2xo")
+sources/5 = SubResource("TileSetAtlasSource_gernn")
+sources/6 = SubResource("TileSetAtlasSource_cwfgg")
+sources/7 = SubResource("TileSetAtlasSource_ud2q3")
+sources/8 = SubResource("TileSetAtlasSource_ov3ai")
+sources/9 = SubResource("TileSetAtlasSource_wc82q")
+sources/10 = SubResource("TileSetAtlasSource_cdpn2")
+sources/11 = SubResource("TileSetAtlasSource_2ycmv")
+sources/12 = SubResource("TileSetAtlasSource_0ve5a")
+sources/13 = SubResource("TileSetAtlasSource_2j7yh")
+sources/14 = SubResource("TileSetAtlasSource_lpnv2")
+sources/15 = SubResource("TileSetAtlasSource_ioujq")
+sources/16 = SubResource("TileSetAtlasSource_5f2pk")
+sources/17 = SubResource("TileSetAtlasSource_41yom")
+sources/18 = SubResource("TileSetAtlasSource_cjo27")
+sources/19 = SubResource("TileSetAtlasSource_5flp1")
+sources/20 = SubResource("TileSetAtlasSource_ipnqh")
+sources/21 = SubResource("TileSetAtlasSource_7nrib")
+sources/22 = SubResource("TileSetAtlasSource_dy1yt")
+sources/23 = SubResource("TileSetAtlasSource_ub1qj")
+sources/24 = SubResource("TileSetAtlasSource_5cgw6")
+sources/25 = SubResource("TileSetAtlasSource_8w5ta")
+sources/26 = SubResource("TileSetAtlasSource_6cbg6")
+sources/27 = SubResource("TileSetAtlasSource_3dyu3")
+sources/28 = SubResource("TileSetAtlasSource_vjk24")
+sources/29 = SubResource("TileSetAtlasSource_vd7o1")
+sources/30 = SubResource("TileSetAtlasSource_qrclk")
+sources/31 = SubResource("TileSetAtlasSource_1h24j")
+sources/32 = SubResource("TileSetAtlasSource_lw4xc")
+sources/33 = SubResource("TileSetAtlasSource_rroi1")
+sources/34 = SubResource("TileSetAtlasSource_bbi0w")
+sources/35 = SubResource("TileSetAtlasSource_eyir8")
+sources/36 = SubResource("TileSetAtlasSource_ktltj")
+sources/37 = SubResource("TileSetAtlasSource_kg2pa")
+sources/38 = SubResource("TileSetAtlasSource_imxyq")
+sources/39 = SubResource("TileSetAtlasSource_cv6wj")
+sources/40 = SubResource("TileSetAtlasSource_cc6r7")
+sources/41 = SubResource("TileSetAtlasSource_eq224")
+sources/42 = SubResource("TileSetAtlasSource_jnd85")
+sources/43 = SubResource("TileSetAtlasSource_kfwij")
+sources/44 = SubResource("TileSetAtlasSource_o0qf5")
+sources/45 = SubResource("TileSetAtlasSource_33mpl")
+sources/46 = SubResource("TileSetAtlasSource_oh5yt")
+sources/47 = SubResource("TileSetAtlasSource_jc2e2")
+sources/48 = SubResource("TileSetAtlasSource_5dcpx")
+sources/49 = SubResource("TileSetAtlasSource_1b31o")
+sources/50 = SubResource("TileSetAtlasSource_cdqf4")
+sources/51 = SubResource("TileSetAtlasSource_01hw4")
+sources/52 = SubResource("TileSetAtlasSource_8kgnv")
+sources/53 = SubResource("TileSetAtlasSource_6flly")
+sources/54 = SubResource("TileSetAtlasSource_m1ta1")
+sources/55 = SubResource("TileSetAtlasSource_nj07d")
+sources/56 = SubResource("TileSetAtlasSource_ps6sk")
+sources/57 = SubResource("TileSetAtlasSource_kk2rv")
+sources/58 = SubResource("TileSetAtlasSource_l01ps")
+sources/59 = SubResource("TileSetAtlasSource_gckxx")
+sources/60 = SubResource("TileSetAtlasSource_dvr81")
+sources/61 = SubResource("TileSetAtlasSource_cs3id")
+sources/62 = SubResource("TileSetAtlasSource_xhkdo")
+sources/63 = SubResource("TileSetAtlasSource_0ce6y")
+sources/64 = SubResource("TileSetAtlasSource_veegv")
+sources/65 = SubResource("TileSetAtlasSource_xvjx5")
+sources/66 = SubResource("TileSetAtlasSource_bli7y")
+sources/67 = SubResource("TileSetAtlasSource_x7mvd")
+sources/68 = SubResource("TileSetAtlasSource_n4rob")
+sources/69 = SubResource("TileSetAtlasSource_xh8ub")
+sources/70 = SubResource("TileSetAtlasSource_37bv8")
+sources/71 = SubResource("TileSetAtlasSource_8mdmx")

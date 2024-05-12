@@ -2,6 +2,7 @@ extends CharacterBody2D
  
 const SPEED = 300.0
 const MAX_SPEED = 500.0
+const DASH_SPEED = 900.0
 const AIR_ACCELERATION = 2000.0
 const JUMP_VELOCITY = -700.0
 const DRAG = 0.8 # Value must be between 0 and 1
@@ -12,6 +13,8 @@ var doubleJump = false
 var is_hiding = false
 var is_facing_right = true
 var is_moving = false
+var is_dashing = false
+var can_dash = true
 var animation_timer = 0.0
 
 
@@ -19,7 +22,8 @@ func _physics_process(delta):
 	var sprite = $AnimatedSprite2D
 	
 	gravityForce(delta)
-	move(delta)
+	
+	if !is_dashing: move(delta)
 	
 	# Hide Action
 	if Input.is_action_just_pressed("hide") and is_on_floor() and !is_hiding:
@@ -42,6 +46,8 @@ func _physics_process(delta):
 	# Peek Action
 	if !sprite.is_playing() and is_hiding:
 		sprite.play("peek")
+	
+	if Input.is_action_just_pressed("dash") and can_dash: dash()
 	
 	move_and_slide()
 	
@@ -126,6 +132,22 @@ func pop(sprite,delta):
 	is_hiding = false
 	$CrouchHitBox.disabled = true
 	$StandingHitBox.disabled = false
+
+func dash():
+	is_dashing = true
+	can_dash = false
+	velocity.x += get_x_direction() * DASH_SPEED
+	$DashTimer.start()
+	$DashCooldown.start()
+
+func _on_dash_timer_timeout():
+	is_dashing = false
+
+func _on_dash_cooldown_timeout():
+	if is_on_floor(): can_dash = true
+
+func has_moved():
+	return (velocity.x != 0 or velocity.y != 0)
 
 #func waitAnimation(delta):
 	#var animSpeed = $AnimatedSprite2D.sprite_frames.get_animation_speed($AnimatedSprite2D.animation)

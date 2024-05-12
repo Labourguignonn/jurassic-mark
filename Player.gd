@@ -11,7 +11,7 @@ const DRAG = 0.8 # Value must be between 0 and 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var doubleJump = false
-var is_crouching = false
+var is_hiding = false
 var is_dashing = false
 var can_dash = true
 var is_facing_right = true
@@ -21,7 +21,7 @@ func _physics_process(delta):
 	var sprite = $AnimatedSprite2D
 	
 	# Idle State
-	if !is_moving() and !is_crouching: sprite.play("idle")
+	if !is_moving() and !is_hiding: sprite.play("idle")
 	
 	# Move State
 	if !is_dashing: move(delta, sprite)
@@ -31,23 +31,23 @@ func _physics_process(delta):
 	#if Input.is_action_just_pressed("dash"):
 	
 	# Hide Action
-	if Input.is_action_just_pressed("hide") and is_on_floor() and !is_crouching:
+	if Input.is_action_just_pressed("hide") and is_on_floor() and !is_hiding:
 		sprite.play("hide")
-		is_crouching = true
+		is_hiding = true
 		
 	# Pop Action (Unhide)
-	if (Input.is_action_just_pressed("pop") or !is_on_floor()) and is_crouching:
+	if (Input.is_action_just_pressed("pop") or !is_on_floor()) and is_hiding:
 		if can_stand():
 			sprite.play("pop")
-			is_crouching = false
+			is_hiding = false
 			$CrouchHitBox.disabled = true
 			$StandingHitBox.disabled = false
 		#animation_timer = 0.3
 		
 	# Idle animations normally and when hiding
 	#if velocity.x == 0 and velocity.y == 0 and !$AnimatedSprite2D.is_playing():
-		#if !is_crouching: $AnimatedSprite2D.play("idle")
-		#if is_crouching: $AnimatedSprite2D.play("peek")	
+		#if !is_hiding: $AnimatedSprite2D.play("idle")
+		#if is_hiding: $AnimatedSprite2D.play("peek")	
 
 	# Gravity
 	velocity.y += gravity * delta
@@ -75,12 +75,12 @@ func move(delta, sprite):
 	
 	# THIS SHOULD BE IN THE FUNCTION THAT TOGGLES CROUCHING, NOT HERE
 	# Enables/Disables character hitbox to CrouchHitbox if crouching or not
-	if $CrouchHitBox.disabled and is_crouching and sprite.get_frame() == 7:
+	if $CrouchHitBox.disabled and is_hiding and sprite.get_frame() == 7:
 		$StandingHitBox.disabled = true
 		$CrouchHitBox.disabled = false
 	
 	if direction: 
-		if !is_crouching: sprite.play("walk")
+		if !is_hiding: sprite.play("walk")
 		else: sprite.play("peek") # Placeholder animation
 
 	if direction != 0 and sprite_direction != direction:
@@ -89,7 +89,7 @@ func move(delta, sprite):
 		
 	if is_on_floor():
 		apply_drag(delta)
-		velocity.x = direction * CROUCH_SPEED if is_crouching else direction * SPEED ##change velocity if crouching
+		velocity.x = direction * CROUCH_SPEED if is_hiding else direction * SPEED ##change velocity if crouching
 		velocity.x *= 2 if Input.is_key_pressed(KEY_SHIFT) else 1
 	else:
 		apply_drag(delta)

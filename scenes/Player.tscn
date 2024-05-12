@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b7slcwrxnpcnt"]
+[gd_scene load_steps=38 format=3 uid="uid://b7slcwrxnpcnt"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_wi1vh"]
 [ext_resource type="Texture2D" uid="uid://b1e2r7gf3qbdj" path="res://assests/Player/Shoom_Hide.png" id="2_py68m"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://rp5gq0s08o4d" path="res://assests/Player/Shoom_Peek.png" id="4_5j80g"]
 [ext_resource type="Texture2D" uid="uid://dvmh2ewopl7s1" path="res://assests/Player/Shoom_Pop.png" id="5_656sv"]
 [ext_resource type="Texture2D" uid="uid://c3jho0o2p2e54" path="res://assests/Player/Shoom_Walk.png" id="6_b44y8"]
-[ext_resource type="Texture2D" uid="uid://y3mn3t3b8pxb" path="res://icon.svg" id="7_deck5"]
-[ext_resource type="TileSet" uid="uid://bp5fgok5xmy4y" path="res://TileSet.tres" id="8_wgimg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2tus"]
 atlas = ExtResource("2_py68m")
@@ -247,16 +245,13 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbssl"]
-size = Vector2(0.018125, 0.340222)
-
 [node name="PlayerScene" type="Node2D"]
 position = Vector2(5, 21)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_as_relative = false
 position = Vector2(1726, -3451)
-scale = Vector2(2.52, 2.52)
+scale = Vector2(2, 2)
 script = ExtResource("1_wi1vh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -298,100 +293,6 @@ zoom = Vector2(0.5, 0.5)
 wait_time = 0.2
 
 [node name="DashCooldown" type="Timer" parent="Player"]
-
-[node name="Level" type="Node" parent="."]
-
-[node name="Floor" type="StaticBody2D" parent="Level"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(552, 572)
-scale = Vector2(31.6514, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/Floor"]
-modulate = Color(0.0235294, 0.0705882, 1, 1)
-visibility_layer = 3
-position = Vector2(2, -1)
-scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("7_deck5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Floor"]
-visible = false
-position = Vector2(2, 0)
-scale = Vector2(8717.24, 466.864)
-shape = SubResource("RectangleShape2D_vbssl")
-
-[node name="crouchObstacle" type="StaticBody2D" parent="Level"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(2223, -1443)
-scale = Vector2(7.25872, 23.067)
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/crouchObstacle"]
-modulate = Color(0.0235294, 0.0705882, 1, 1)
-visibility_layer = 3
-position = Vector2(2, -1)
-scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("7_deck5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/crouchObstacle"]
-position = Vector2(-3.05176e-05, 0.94693)
-scale = Vector2(8717.24, 466.864)
-shape = SubResource("RectangleShape2D_vbssl")
-
-[node name="Wall2" type="StaticBody2D" parent="Level"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(-496, 403)
-scale = Vector2(1.08575, 2.34487)
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/Wall2"]
-modulate = Color(0.0235294, 0.0705882, 1, 1)
-visibility_layer = 3
-position = Vector2(2, -1)
-scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("7_deck5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Wall2"]
-position = Vector2(-1.69277e-05, -0.13687)
-scale = Vector2(8717.24, 466.864)
-shape = SubResource("RectangleShape2D_vbssl")
-
-[node name="LWall" type="StaticBody2D" parent="Level"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(-1818, -161)
-scale = Vector2(0.776116, 9.82878)
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/LWall"]
-modulate = Color(0.0235294, 0.0705882, 1, 1)
-visibility_layer = 3
-position = Vector2(2, -1)
-scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("7_deck5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/LWall"]
-visible = false
-position = Vector2(2, 0)
-scale = Vector2(8717.24, 466.864)
-shape = SubResource("RectangleShape2D_vbssl")
-
-[node name="RWall" type="StaticBody2D" parent="Level"]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(3060, -122)
-scale = Vector2(1, 9.47512)
-
-[node name="Sprite2D" type="Sprite2D" parent="Level/RWall"]
-modulate = Color(0.0235294, 0.0705882, 1, 1)
-visibility_layer = 3
-position = Vector2(2, -1)
-scale = Vector2(1.23502, 1.25095)
-texture = ExtResource("7_deck5")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/RWall"]
-visible = false
-position = Vector2(2, 0)
-scale = Vector2(8717.24, 466.864)
-shape = SubResource("RectangleShape2D_vbssl")
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("8_wgimg")
-format = 2
 
 [connection signal="timeout" from="Player/DashTimer" to="Player" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Player/DashCooldown" to="Player" method="_on_dash_cooldown_timeout"]

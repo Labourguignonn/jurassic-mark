@@ -1,7 +1,7 @@
-[gd_scene load_steps=39 format=3 uid="uid://bb8256pao1wtt"]
+[gd_scene load_steps=39 format=3 uid="uid://cppql238lqhnp"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_4p2kd"]
-[ext_resource type="TileSet" uid="uid://dhm0o3q75w1yx" path="res://TileSet.tres" id="1_b2hrj"]
+[ext_resource type="TileSet" path="res://TileSet.tres" id="1_b2hrj"]
 [ext_resource type="Texture2D" uid="uid://b1e2r7gf3qbdj" path="res://assests/Player/Shoom_Hide.png" id="2_7fppt"]
 [ext_resource type="Texture2D" uid="uid://bhpoqg34oygou" path="res://assests/Player/Shoom_Idle.png" id="2_jxapq"]
 [ext_resource type="Texture2D" uid="uid://rp5gq0s08o4d" path="res://assests/Player/Shoom_Peek.png" id="4_vy1ph"]

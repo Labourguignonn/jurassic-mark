@@ -24,6 +24,7 @@ func _physics_process(delta):
 	gravityForce(delta)
 	
 	if !is_dashing: move(delta)
+	if Input.is_action_just_pressed("dash") and can_dash: dash()
 	
 	# Hide Action
 	if Input.is_action_just_pressed("hide") and is_on_floor() and !is_hiding:
@@ -47,7 +48,6 @@ func _physics_process(delta):
 	if !sprite.is_playing() and is_hiding:
 		sprite.play("peek")
 	
-	if Input.is_action_just_pressed("dash") and can_dash: dash()
 	
 	move_and_slide()
 	

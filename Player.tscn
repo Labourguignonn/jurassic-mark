@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b7slcwrxnpcnt"]
+[gd_scene load_steps=41 format=3 uid="uid://b7slcwrxnpcnt"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_ctghn"]
 [ext_resource type="Texture2D" uid="uid://b1e2r7gf3qbdj" path="res://assests/Player/Shoom_Hide.png" id="2_r6aq5"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dvmh2ewopl7s1" path="res://assests/Player/Shoom_Pop.png" id="5_lvlsw"]
 [ext_resource type="Texture2D" uid="uid://c3jho0o2p2e54" path="res://assests/Player/Shoom_Walk.png" id="6_5epdu"]
 [ext_resource type="Texture2D" uid="uid://y3mn3t3b8pxb" path="res://icon.svg" id="7_3lkl8"]
+[ext_resource type="TileSet" uid="uid://bp5fgok5xmy4y" path="res://TileSet.tres" id="8_feste"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2tus"]
 atlas = ExtResource("2_r6aq5")
@@ -293,6 +294,11 @@ target_position = Vector2(0, -25)
 position = Vector2(1.98413, 10.7143)
 zoom = Vector2(0.5, 0.5)
 
+[node name="DashTimer" type="Timer" parent="Player"]
+wait_time = 0.2
+
+[node name="DashCooldown" type="Timer" parent="Player"]
+
 [node name="Level" type="Node" parent="."]
 
 [node name="Floor" type="StaticBody2D" parent="Level"]
@@ -382,3 +388,10 @@ visible = false
 position = Vector2(2, 0)
 scale = Vector2(8717.24, 466.864)
 shape = SubResource("RectangleShape2D_vbssl")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("8_feste")
+format = 2
+
+[connection signal="timeout" from="Player/DashTimer" to="Player" method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Player/DashCooldown" to="Player" method="_on_dash_cooldown_timeout"]

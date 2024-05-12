@@ -32,7 +32,7 @@ func _physics_process(delta):
 		pop(sprite,delta)
 	
 	# Jump Action 	
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and !is_hiding:
 		jump(sprite)	
 	
 	# Idle Action
@@ -40,8 +40,8 @@ func _physics_process(delta):
 		sprite.play("idle")
 	
 	# Peek Action
-	if !$AnimatedSprite2D.is_playing() and is_hiding:
-		$AnimatedSprite2D.play("peek")
+	if !sprite.is_playing() and is_hiding:
+		sprite.play("peek")
 	
 	move_and_slide()
 	
@@ -71,7 +71,7 @@ func move(delta):
 		is_moving = false
 	
 	if is_on_floor():	
-		velocity.x = direction * SPEED
+		velocity.x =  (direction * SPEED)/2 if is_hiding else direction * SPEED
 		velocity.x *= 2 if Input.is_key_pressed(KEY_SHIFT) and !is_hiding else 1
 	else:
 		apply_drag(delta)
@@ -79,7 +79,8 @@ func move(delta):
 		velocity.x = min(max(-MAX_SPEED, velocity.x), MAX_SPEED)
 
 func gravityForce(delta):
-	velocity.y += gravity * delta
+	if velocity.y < 2500:
+		velocity.y += gravity * delta
 	if is_on_floor():
 		velocity.y = 0
 		doubleJump = true
@@ -102,6 +103,7 @@ func jump(sprite):
 	# Wall jumping
 	elif is_on_wall(): 
 		velocity.x = -MAX_SPEED if is_facing_right else MAX_SPEED
+		velocity.y = JUMP_VELOCITY/2
 		sprite.set_flip_h(!sprite.is_flipped_h())
 		is_facing_right = !is_facing_right
 	# Jumping in the air	
@@ -113,6 +115,8 @@ func jump(sprite):
 	velocity.y = JUMP_VELOCITY
 
 func hiding(sprite,delta):
+	apply_drag(delta)
+	velocity.x = max(SPEED/2,velocity.x)
 	sprite.play("hide")
 	is_hiding = true		
 

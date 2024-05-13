@@ -1,53 +1,56 @@
 extends CharacterBody2D
  
-const SPEED = 300.0
-const MAX_SPEED = 500.0
-const DASH_SPEED = 900.0
+const SPEED = 150.0
+const MAX_SPEED = 250.0
+const DASH_SPEED = 450.0
 const AIR_ACCELERATION = 2000.0
-const JUMP_VELOCITY = -700.0
+const JUMP_VELOCITY = -500.0
 const DRAG = 0.8 # Value must be between 0 and 1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var doubleJump = false
-var is_hiding = false
+var is_crouching = false
 var is_facing_right = true
 var is_moving = false
 var is_dashing = false
 var can_dash = true
 var animation_timer = 0.0
 
-
 func _physics_process(delta):
 	var sprite = $AnimatedSprite2D
 	
-	gravityForce(delta)
-	
-	if !is_dashing: move(delta)
-	if Input.is_action_just_pressed("dash") and can_dash: dash()
+	if !is_dashing: 
+		move(delta)
+		gravityForce(delta)
 	
 	# Hide Action
-	if Input.is_action_just_pressed("hide") and is_on_floor() and !is_hiding:
+	if Input.is_action_just_pressed("hide") and is_on_floor() and !is_crouching:
 		is_moving = false
-		hiding(sprite,delta)
+		crouch(sprite,delta)
 		
 	# Pop Action (Unhide)
-	if Input.is_action_just_pressed("pop") and is_hiding:
+	if Input.is_action_just_pressed("pop") and is_crouching:
 		is_moving = false
 		pop(sprite,delta)
 	
 	# Jump Action 	
-	if Input.is_action_just_pressed("jump") and !is_hiding:
+	if Input.is_action_just_pressed("jump") and !is_crouching:
 		jump(sprite)	
-	
+		
+	if Input.is_action_just_released("jump"):
+		stop_jump(sprite)	
+		
 	# Idle Action
-	if !is_hiding and !is_moving:
+	if !is_crouching and !is_moving:
 		sprite.play("idle")
 	
 	# Peek Action
-	if !sprite.is_playing() and is_hiding:
+	if !sprite.is_playing() and is_crouching:
 		sprite.play("peek")
 	
+	if Input.is_action_just_pressed("dash") and can_dash and !is_crouching: 
+		dash()
 	
 	move_and_slide()
 	
@@ -58,27 +61,27 @@ func move(delta):
 	var flipped = sprite.is_flipped_h()
 	var sprite_direction = 1 if !flipped else -1
 	
-	if $CrouchHitBox.disabled and is_hiding and sprite.get_frame() == 7:
+	if $CrouchHitBox.disabled and is_crouching and sprite.get_frame() == 7:
 		$StandingHitBox.disabled = true
 		$CrouchHitBox.disabled = false
 	
 	if direction: 
 		is_moving = true
-		if !is_hiding:
+		if !is_crouching:
 			sprite.play("walk")
 		else:
 			# Implement crouch animation
 			pass
-		#correct sprite
-		if direction != 0 and sprite_direction != direction:
+		# Flip character sprite
+		if sprite_direction != direction:
 			sprite.set_flip_h(!flipped)
 			is_facing_right = !is_facing_right	
 	else:
 		is_moving = false
 	
 	if is_on_floor():	
-		velocity.x =  (direction * SPEED)/2 if is_hiding else direction * SPEED
-		velocity.x *= 2 if Input.is_key_pressed(KEY_SHIFT) and !is_hiding else 1
+		velocity.x =  (direction * SPEED)/2 if is_crouching else direction * SPEED
+		velocity.x *= 2 if Input.is_key_pressed(KEY_SHIFT) and !is_crouching else 1
 	else:
 		apply_drag(delta)
 		velocity.x = velocity.x + direction * AIR_ACCELERATION * delta
@@ -120,16 +123,20 @@ func jump(sprite):
 	
 	velocity.y = JUMP_VELOCITY
 
-func hiding(sprite,delta):
+func stop_jump(sprite):
+	if velocity.y <= -200:
+		velocity.y = -200
+	
+func crouch(sprite,delta):
 	apply_drag(delta)
 	velocity.x = max(SPEED/2,velocity.x)
 	sprite.play("hide")
-	is_hiding = true		
+	is_crouching = true		
 
 func pop(sprite,delta):
 	sprite.play("pop")
 	await get_tree().create_timer(delta * 8).timeout
-	is_hiding = false
+	is_crouching = false
 	$CrouchHitBox.disabled = true
 	$StandingHitBox.disabled = false
 

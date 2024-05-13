@@ -250,8 +250,6 @@ position = Vector2(5, 21)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_as_relative = false
-position = Vector2(1726, -3451)
-scale = Vector2(2, 2)
 script = ExtResource("1_wi1vh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
@@ -286,8 +284,8 @@ position = Vector2(9.12699, 7.93651)
 target_position = Vector2(0, -25)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(1.98413, 10.7143)
-zoom = Vector2(0.5, 0.5)
+position = Vector2(2, 8.75001)
+zoom = Vector2(2, 2)
 
 [node name="DashTimer" type="Timer" parent="Player"]
 wait_time = 0.2

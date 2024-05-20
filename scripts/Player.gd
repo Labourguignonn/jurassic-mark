@@ -16,6 +16,9 @@ var is_moving = false
 var is_dashing = false
 var can_dash = true
 var animation_timer = 0.0
+var health = 50
+
+#States
 
 func _physics_process(delta):
 	var sprite = $AnimatedSprite2D
@@ -30,7 +33,7 @@ func _physics_process(delta):
 		crouch(sprite,delta)
 		
 	# Pop Action (Unhide)
-	if Input.is_action_just_pressed("pop") and is_crouching:
+	if Input.is_action_just_pressed("pop") and is_crouching and can_stand():
 		is_moving = false
 		pop(sprite,delta)
 	
@@ -155,6 +158,14 @@ func _on_dash_cooldown_timeout():
 
 func has_moved():
 	return (velocity.x != 0 or velocity.y != 0)
+
+func can_stand():
+	if !$CrouchRaycast1.is_colliding() and !$CrouchRaycast2.is_colliding():
+		return true
+	else:
+		return false
+	
+
 
 #func waitAnimation(delta):
 	#var animSpeed = $AnimatedSprite2D.sprite_frames.get_animation_speed($AnimatedSprite2D.animation)

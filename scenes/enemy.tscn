@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://s8q4h0n6slvv"]
+
+[ext_resource type="Texture2D" uid="uid://yn116ow26xeg" path="res://assests/Rocks/ice_rock/ice_rock1.png" id="1_elhhk"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_fofsi"]
+[ext_resource type="PackedScene" uid="uid://b67r4gu5gn8ko" path="res://scenes/hitbox.tscn" id="3_ojl2d"]
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_fofsi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_elhhk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(-106, 45, -91, -2, -73, 8, -37, -36, 75, -53, 76, -22, 72, 1, 100, 4, 108, 41, 108, 50, -107, 50)
+
+[node name="Hitbox" parent="." instance=ExtResource("3_ojl2d")]
+visible = false
+scale = Vector2(0.63296, 0.689011)
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="body_shape_entered" from="Hitbox" to="." method="_on_hitbox_body_shape_entered"]

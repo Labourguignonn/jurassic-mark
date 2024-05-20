@@ -14,8 +14,8 @@ layer_0/tile_data = PackedInt32Array(524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 5
 layer_1/name = "Background"
 layer_1/tile_data = PackedInt32Array()
 
-[node name="Enemy" parent="." instance=ExtResource("3_8wa3r")]
-position = Vector2(646, 209)
-
 [node name="PlayerScene" parent="." instance=ExtResource("2_52ytw")]
-position = Vector2(141, 226)
+position = Vector2(74, 212)
+
+[node name="Enemy" parent="." instance=ExtResource("3_8wa3r")]
+position = Vector2(646, 206)

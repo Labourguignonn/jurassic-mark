@@ -17,10 +17,9 @@ var is_dashing 		= false
 var can_dash 		= true
 var health = 50
 
-#States
-
 func _physics_process(delta):
 	var sprite = $AnimatedSprite2D
+	
 	if !is_dashing:
 		if $AnimationTimer.is_stopped(): move(sprite, delta)
 		gravityForce(delta)
@@ -65,7 +64,6 @@ func gravityForce(delta):
 	elif is_on_wall():
 		can_have_tolerance_timer = true
 		wall_jump = true
-		#velocity.y += (0.05 * gravity * delta)
 		velocity.y = min(velocity.y, 0.05 * gravity)
 	# Tolerance time for jumping right after starting to fall
 	elif can_have_tolerance_timer:
@@ -124,7 +122,6 @@ func jump(sprite):
 			sprite.set_flip_h(true)
 		velocity.x = sprite_direction * MAX_SPEED
 		$AnimationTimer.start()
-		print(double_jump)
 	elif $ToleranceTimer.get_time_left() > 0 and !can_have_tolerance_timer: pass
 	elif double_jump: double_jump = false
 	else: return

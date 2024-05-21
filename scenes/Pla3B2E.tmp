@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b7slcwrxnpcnt"]
+[gd_scene load_steps=38 format=3 uid="uid://b7slcwrxnpcnt"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_wi1vh"]
 [ext_resource type="Texture2D" uid="uid://b1e2r7gf3qbdj" path="res://assests/Player/Shoom_Hide.png" id="2_py68m"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://rp5gq0s08o4d" path="res://assests/Player/Shoom_Peek.png" id="4_5j80g"]
 [ext_resource type="Texture2D" uid="uid://dvmh2ewopl7s1" path="res://assests/Player/Shoom_Pop.png" id="5_656sv"]
 [ext_resource type="Texture2D" uid="uid://c3jho0o2p2e54" path="res://assests/Player/Shoom_Walk.png" id="6_b44y8"]
-[ext_resource type="PackedScene" uid="uid://crimtpr01htj2" path="res://scenes/camera_player.tscn" id="7_kg73w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2tus"]
 atlas = ExtResource("2_py68m")
@@ -248,7 +247,6 @@ animations = [{
 
 [node name="PlayerScene" type="Node2D"]
 position = Vector2(5, 21)
-scale = Vector2(1, 1.16)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_as_relative = false
@@ -263,7 +261,7 @@ autoplay = "idle"
 z_index = 1
 position = Vector2(19.277, 1.30319)
 scale = Vector2(0.588412, 0.566248)
-polygon = PackedVector2Array(-14.0667, -19.9616, -14.0667, 25.9547, -22.5641, 38.3168, -32.7611, 34.7848, -44.6575, 38.3168, -51.4554, 25.9547, -51.4554, -19.9616, -32.7611, -23.4936)
+polygon = PackedVector2Array(-16.5754, -19.8214, -15.901, 22.9273, -25.3426, 36.9433, -34.7842, 30.6361, -44.9002, 36.9433, -52.3186, 20.8249, -52.3186, -19.8214, -33.4354, -24.0262)
 
 [node name="CrouchHitBox" type="CollisionPolygon2D" parent="Player"]
 visible = false
@@ -292,21 +290,14 @@ position_smoothing_enabled = true
 
 [node name="AnimationTimer" type="Timer" parent="Player"]
 wait_time = 0.2
-one_shot = true
 
 [node name="DashCooldown" type="Timer" parent="Player"]
 wait_time = 0.5
-one_shot = true
 
 [node name="ToleranceTimer" type="Timer" parent="Player"]
-wait_time = 0.15
-one_shot = true
-
-[node name="Camera_Player" parent="Player" instance=ExtResource("7_kg73w")]
-position = Vector2(0, 2.58621)
-scale = Vector2(0.485565, 0.419433)
-zoom = Vector2(2, 2)
+wait_time = 0.1
 
 [connection signal="timeout" from="Player/AnimationTimer" to="Player" method="_on_animation_timer_timeout"]
+[connection signal="timeout" from="Player/AnimationTimer" to="Player" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="Player/DashCooldown" to="Player" method="_on_dash_cooldown_timeout"]
 [connection signal="timeout" from="Player/ToleranceTimer" to="Player" method="_on_tolerance_timer_timeout"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://crimtpr01htj2"]
+
+[ext_resource type="Texture2D" uid="uid://b54i8uggtv8do" path="res://assests/Hearts/Red heart.png" id="1_j3poe"]
+
+[node name="Camera_Player" type="Camera2D"]
+position = Vector2(-2, -2)
+
+[node name="heart1" type="Node2D" parent="."]
+position = Vector2(-533, -282)
+scale = Vector2(0.239999, 0.261298)
+
+[node name="Sprite2D" type="Sprite2D" parent="heart1"]
+texture = ExtResource("1_j3poe")
+
+[node name="heart2" type="Node2D" parent="."]
+position = Vector2(-361, -283)
+scale = Vector2(0.239999, 0.261298)
+
+[node name="Sprite2D" type="Sprite2D" parent="heart2"]
+texture = ExtResource("1_j3poe")
+
+[node name="heart3" type="Node2D" parent="."]
+position = Vector2(-447, -283)
+scale = Vector2(0.239999, 0.261298)
+
+[node name="Sprite2D" type="Sprite2D" parent="heart3"]
+texture = ExtResource("1_j3poe")

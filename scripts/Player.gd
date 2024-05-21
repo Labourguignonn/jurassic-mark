@@ -15,6 +15,9 @@ var wall_jump 		= false
 var is_crouching 	= false
 var is_dashing 		= false
 var can_dash 		= true
+var health = 50
+
+#States
 
 func _physics_process(delta):
 	var sprite = $AnimatedSprite2D
@@ -168,3 +171,7 @@ func _on_tolerance_timer_timeout():
 	#timer.set_autostart(auto_start)
 	#timer.timeout.connect(Callable(self, "_on_dash_timer_timeout"))
 	#return timer
+
+#func waitAnimation(delta):
+	#var animSpeed = $AnimatedSprite2D.sprite_frames.get_animation_speed($AnimatedSprite2D.animation)
+	#await get_tree().create_timer(delta * 8).timeout

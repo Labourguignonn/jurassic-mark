@@ -61,6 +61,11 @@ dash={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="level1"
+
 [physics]
 
 2d/default_gravity=1580.0

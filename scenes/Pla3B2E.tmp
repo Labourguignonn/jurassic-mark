@@ -261,7 +261,7 @@ autoplay = "idle"
 z_index = 1
 position = Vector2(19.277, 1.30319)
 scale = Vector2(0.588412, 0.566248)
-polygon = PackedVector2Array(-14.0667, -19.9616, -14.0667, 25.9547, -22.5641, 38.3168, -32.7611, 34.7848, -44.6575, 38.3168, -51.4554, 25.9547, -51.4554, -19.9616, -32.7611, -23.4936)
+polygon = PackedVector2Array(-16.5754, -19.8214, -15.901, 22.9273, -25.3426, 36.9433, -34.7842, 30.6361, -44.9002, 36.9433, -52.3186, 20.8249, -52.3186, -19.8214, -33.4354, -24.0262)
 
 [node name="CrouchHitBox" type="CollisionPolygon2D" parent="Player"]
 visible = false
@@ -290,15 +290,12 @@ position_smoothing_enabled = true
 
 [node name="AnimationTimer" type="Timer" parent="Player"]
 wait_time = 0.2
-one_shot = true
 
 [node name="DashCooldown" type="Timer" parent="Player"]
 wait_time = 0.5
-one_shot = true
 
 [node name="ToleranceTimer" type="Timer" parent="Player"]
-wait_time = 0.15
-one_shot = true
+wait_time = 0.1
 
 [connection signal="timeout" from="Player/AnimationTimer" to="Player" method="_on_animation_timer_timeout"]
 [connection signal="timeout" from="Player/AnimationTimer" to="Player" method="_on_dash_timer_timeout"]

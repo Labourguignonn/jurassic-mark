@@ -14,4 +14,4 @@ layer_1/name = "Background"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="PlayerScene" parent="." instance=ExtResource("2_52ytw")]
-position = Vector2(74, 212)
+position = Vector2(1668, 125)

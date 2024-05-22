@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b7slcwrxnpcnt"]
+[gd_scene load_steps=41 format=3 uid="uid://b7slcwrxnpcnt"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_wi1vh"]
 [ext_resource type="Texture2D" uid="uid://b1e2r7gf3qbdj" path="res://assests/Player/Shoom_Hide.png" id="2_py68m"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://rp5gq0s08o4d" path="res://assests/Player/Shoom_Peek.png" id="4_5j80g"]
 [ext_resource type="Texture2D" uid="uid://dvmh2ewopl7s1" path="res://assests/Player/Shoom_Pop.png" id="5_656sv"]
 [ext_resource type="Texture2D" uid="uid://c3jho0o2p2e54" path="res://assests/Player/Shoom_Walk.png" id="6_b44y8"]
-[ext_resource type="PackedScene" uid="uid://crimtpr01htj2" path="res://scenes/Camera_player.tscn" id="7_kg73w"]
+[ext_resource type="PackedScene" uid="uid://dgqbfnq2iiavp" path="res://scenes/hurtbox.tscn" id="7_op46c"]
+[ext_resource type="Script" path="res://scripts/Health.gd" id="8_kguyu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2tus"]
 atlas = ExtResource("2_py68m")
@@ -246,65 +247,85 @@ animations = [{
 "speed": 16.0
 }]
 
-[node name="PlayerScene" type="Node2D"]
-position = Vector2(5, 21)
-scale = Vector2(1, 1.16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5fcf"]
+size = Vector2(18.8492, 25.4514)
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
 z_as_relative = false
+position = Vector2(548, 257.759)
+collision_mask = 22
 script = ExtResource("1_wi1vh")
 
-[node name="Camera_Player" parent="Player" instance=ExtResource("7_kg73w")]
-position = Vector2(0, 2.58621)
-scale = Vector2(0.485565, 0.419433)
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+position_smoothing_enabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vtt1i")
-animation = &"pop"
+animation = &"idle"
 autoplay = "idle"
 
-[node name="StandingHitBox" type="CollisionPolygon2D" parent="Player"]
+[node name="StandingHitBox" type="CollisionPolygon2D" parent="."]
 visible = false
+modulate = Color(0.160784, 1, 0.152941, 1)
 z_index = 1
 position = Vector2(19.277, 1.30319)
 scale = Vector2(0.588412, 0.566248)
 polygon = PackedVector2Array(-14.0667, -19.9616, -14.0667, 25.9547, -22.5641, 38.3168, -32.7611, 34.7848, -44.6575, 38.3168, -51.4554, 25.9547, -51.4554, -19.9616, -32.7611, -23.4936)
 
-[node name="CrouchHitBox" type="CollisionPolygon2D" parent="Player"]
+[node name="CrouchHitBox" type="CollisionPolygon2D" parent="."]
+visible = false
 z_index = 1
 position = Vector2(20.6349, 1.19048)
 scale = Vector2(0.588412, 0.566248)
 polygon = PackedVector2Array(-16.3744, 8.55456, -6.17747, 19.2115, -4.47799, 32.9133, -12.9754, 37.4806, -57.1622, 37.4806, -65.6596, 32.9133, -62.2606, 16.1667, -48.6647, 7.03214, -29.9703, 5.50972)
 disabled = true
 
-[node name="CrouchRayCast" type="RayCast2D" parent="Player"]
+[node name="hurtbox" parent="." instance=ExtResource("7_op46c")]
+visible = false
+position = Vector2(0, -10.3448)
+rotation = 3.14159
+scale = Vector2(1.59158, -1.37517)
+collision_layer = 1
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(0.628357, 11.6973)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_i5fcf")
+debug_color = Color(0.927271, 0.220012, 0.401478, 0.42)
+
+[node name="CrouchRayCast" type="RayCast2D" parent="."]
 visible = false
 position = Vector2(0, 4)
 target_position = Vector2(0, -20)
 
-[node name="LeftRayCast" type="RayCast2D" parent="Player"]
+[node name="LeftRayCast" type="RayCast2D" parent="."]
 visible = false
 position = Vector2(0, 4)
 target_position = Vector2(-24, 0)
 
-[node name="RightRayCast" type="RayCast2D" parent="Player"]
+[node name="RightRayCast" type="RayCast2D" parent="."]
 visible = false
 position = Vector2(0, 4)
 target_position = Vector2(24, 0)
 
-[node name="AnimationTimer" type="Timer" parent="Player"]
+[node name="AnimationTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
 
-[node name="DashCooldown" type="Timer" parent="Player"]
+[node name="DashCooldown" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
 
-[node name="ToleranceTimer" type="Timer" parent="Player"]
+[node name="ToleranceTimer" type="Timer" parent="."]
 wait_time = 0.15
 one_shot = true
 
-[connection signal="timeout" from="Player/AnimationTimer" to="Player" method="_on_animation_timer_timeout"]
-[connection signal="timeout" from="Player/DashCooldown" to="Player" method="_on_dash_cooldown_timeout"]
-[connection signal="timeout" from="Player/ToleranceTimer" to="Player" method="_on_tolerance_timer_timeout"]
+[node name="Health" type="Node" parent="."]
+script = ExtResource("8_kguyu")
+MAX_HEALTH = 30
+
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
+[connection signal="timeout" from="ToleranceTimer" to="." method="_on_tolerance_timer_timeout"]

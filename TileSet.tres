@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=149 format=3 uid="uid://cykqfq18x8x01"]
+[gd_resource type="TileSet" load_steps=145 format=3 uid="uid://cykqfq18x8x01"]
 
 [ext_resource type="Texture2D" uid="uid://dsbvicghbenk1" path="res://assests/tilesets/1 Tiles/Tile_01.png" id="1_naxmr"]
 [ext_resource type="Texture2D" uid="uid://d3bmcervigpht" path="res://assests/tilesets/1 Tiles/Tile_02.png" id="2_7pkis"]
@@ -70,10 +70,8 @@
 [ext_resource type="Texture2D" uid="uid://m45ctn1em0rm" path="res://assests/tilesets/1 Tiles/Tile_08.png" id="68_l6es3"]
 [ext_resource type="Texture2D" uid="uid://dwm55safocjem" path="res://assests/tilesets/1 Tiles/Tile_71.png" id="69_sckyo"]
 [ext_resource type="Texture2D" uid="uid://boklgu2np8oeh" path="res://assests/tilesets/1 Tiles/Tile_72.png" id="70_hfqie"]
-[ext_resource type="Texture2D" uid="uid://d30hn7f80kr2v" path="res://assests/Trees/fir_tree_1.png" id="71_snwmf"]
 [ext_resource type="Texture2D" uid="uid://bdbqxg3m8fo2a" path="res://assests/tilesets/1 Tiles/Tile_09.png" id="71_uwxnk"]
 [ext_resource type="Texture2D" uid="uid://dmwl5jeolk31b" path="res://assests/tilesets/1 Tiles/Tile_10.png" id="72_kb6ev"]
-[ext_resource type="Texture2D" uid="uid://7dhg6g4qw5a6" path="res://assests/Trees/fir_tree_9.png" id="72_oswjp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1fw4g"]
 resource_name = "GrassTopLeftCorner"
@@ -705,45 +703,6 @@ texture_region_size = Vector2i(32, 32)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e22u8"]
-texture = ExtResource("71_snwmf")
-margins = Vector2i(14, 0)
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0 = 0
-1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:0/0/physics_layer_0/angular_velocity = 0.0
-0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0 = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
-0:2/0 = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0 = 0
-1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:2/0/physics_layer_0/angular_velocity = 0.0
-0:3/0 = 0
-0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:3/0/physics_layer_0/angular_velocity = 0.0
-1:3/0 = 0
-1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:3/0/physics_layer_0/angular_velocity = 0.0
-0:4/0 = 0
-0:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:4/0/physics_layer_0/angular_velocity = 0.0
-1:4/0 = 0
-1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:4/0/physics_layer_0/angular_velocity = 0.0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qiu11"]
-texture = ExtResource("72_oswjp")
-texture_region_size = Vector2i(32, 32)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ov3ai"]
 resource_name = "RockTopLeftCorner01"
 texture = ExtResource("71_uwxnk")
@@ -764,8 +723,7 @@ texture_region_size = Vector2i(32, 32)
 
 [resource]
 tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 2
-physics_layer_0/collision_mask = 5
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_1fw4g")
 sources/1 = SubResource("TileSetAtlasSource_52qeu")
 sources/2 = SubResource("TileSetAtlasSource_8ks51")
@@ -838,5 +796,3 @@ sources/68 = SubResource("TileSetAtlasSource_n4rob")
 sources/69 = SubResource("TileSetAtlasSource_xh8ub")
 sources/70 = SubResource("TileSetAtlasSource_37bv8")
 sources/71 = SubResource("TileSetAtlasSource_8mdmx")
-sources/72 = SubResource("TileSetAtlasSource_e22u8")
-sources/73 = SubResource("TileSetAtlasSource_qiu11")

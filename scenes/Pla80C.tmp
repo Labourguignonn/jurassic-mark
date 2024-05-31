@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b7slcwrxnpcnt"]
+[gd_scene load_steps=39 format=3 uid="uid://b7slcwrxnpcnt"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_wi1vh"]
 [ext_resource type="Texture2D" uid="uid://b1e2r7gf3qbdj" path="res://assests/Player/Shoom_Hide.png" id="2_py68m"]
@@ -6,8 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://rp5gq0s08o4d" path="res://assests/Player/Shoom_Peek.png" id="4_5j80g"]
 [ext_resource type="Texture2D" uid="uid://dvmh2ewopl7s1" path="res://assests/Player/Shoom_Pop.png" id="5_656sv"]
 [ext_resource type="Texture2D" uid="uid://c3jho0o2p2e54" path="res://assests/Player/Shoom_Walk.png" id="6_b44y8"]
-[ext_resource type="PackedScene" uid="uid://dgqbfnq2iiavp" path="res://scenes/hurtbox.tscn" id="7_op46c"]
-[ext_resource type="PackedScene" uid="uid://b8lpf1allks5j" path="res://scenes/health.tscn" id="8_xgjp0"]
+[ext_resource type="PackedScene" uid="uid://crimtpr01htj2" path="res://scenes/Camera_player.tscn" id="7_kg73w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2tus"]
 atlas = ExtResource("2_py68m")
@@ -247,27 +246,25 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5fcf"]
-size = Vector2(18.8492, 25.4514)
+[node name="PlayerScene" type="Node2D"]
+position = Vector2(5, 21)
+scale = Vector2(1, 1.16)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" parent="."]
 z_as_relative = false
-position = Vector2(548, 257.759)
-collision_mask = 22
 script = ExtResource("1_wi1vh")
-max_health = 40
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera_Player" parent="Player" instance=ExtResource("7_kg73w")]
+position = Vector2(0, 2.58621)
+scale = Vector2(0.485565, 0.419433)
 zoom = Vector2(2, 2)
-position_smoothing_enabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_vtt1i")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="StandingHitBox" type="CollisionPolygon2D" parent="."]
-modulate = Color(0.160784, 1, 0.152941, 1)
+[node name="StandingHitBox" type="CollisionPolygon2D" parent="Player"]
 z_index = 1
 position = Vector2(19.277, 1.30319)
 scale = Vector2(0.588412, 0.566248)
@@ -281,43 +278,22 @@ scale = Vector2(0.588412, 0.566248)
 polygon = PackedVector2Array(-16.3744, 8.55456, -6.17747, 19.2115, -4.47799, 32.9133, -12.9754, 37.4806, -57.1622, 37.4806, -65.6596, 32.9133, -62.2606, 16.1667, -48.6647, 7.03214, -29.9703, 5.50972)
 disabled = true
 
-[node name="hurtbox" parent="." instance=ExtResource("7_op46c")]
-position = Vector2(0, -10.3448)
-rotation = 3.14159
-scale = Vector2(1.59158, -1.37517)
-collision_layer = 1
-collision_mask = 7
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(0.628357, 11.6973)
-shape = SubResource("RectangleShape2D_i5fcf")
-debug_color = Color(0.927271, 0.220012, 0.401478, 0.42)
-
-[node name="CrouchRayCast" type="RayCast2D" parent="."]
+[node name="CrouchRayCast" type="RayCast2D" parent="Player"]
 visible = false
-position = Vector2(0, -3)
+position = Vector2(0, 4)
 target_position = Vector2(0, -20)
 
-[node name="LeftRayCast" type="RayCast2D" parent="."]
-visible = false
+[node name="LeftRayCast" type="RayCast2D" parent="Player"]
 position = Vector2(0, 4)
 target_position = Vector2(-24, 0)
-collision_mask = 6
 
-[node name="RightRayCast" type="RayCast2D" parent="."]
-visible = false
+[node name="RightRayCast" type="RayCast2D" parent="Player"]
 position = Vector2(0, 4)
 target_position = Vector2(24, 0)
-collision_mask = 6
 
-[node name="AnimationTimer" type="Timer" parent="."]
+[node name="AnimationTimer" type="Timer" parent="Player"]
 wait_time = 0.2
 one_shot = true
-
-[node name="Health" parent="." instance=ExtResource("8_xgjp0")]
-
-[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
-[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
 
 [node name="ToleranceTimer" type="Timer" parent="Player"]
 wait_time = 0.1

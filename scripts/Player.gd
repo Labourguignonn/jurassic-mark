@@ -171,7 +171,6 @@ func _on_tolerance_timer_timeout():
 func _on_hurtbox_body_entered(body):
 	if body.name == "Enemy":
 		healthcomp.take_damage(10)
-		print(healthcomp.curr_health)
 		if $RightRayCast.is_colliding():
 			knockback(Vector2(-300,-200))
 		elif $LeftRayCast.is_colliding():

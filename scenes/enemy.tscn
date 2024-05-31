@@ -109,7 +109,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i4e1n")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -120,7 +120,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6rrp8")
 }],
-"loop": true,
+"loop": false,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -180,11 +180,11 @@ size = Vector2(20, 23.2173)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_fofsi")
+max_health = 30
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_bjkvf")
 animation = &"hurt"
-frame_progress = 0.133566
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-10, 16.2007)
@@ -202,5 +202,6 @@ position = Vector2(-1.68192, 5.96046e-08)
 scale = Vector2(0.074946, 0.0491907)
 shape = SubResource("CircleShape2D_qcbsd")
 
+[connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_shape_entered" from="Hitbox" to="." method="_on_hitbox_body_shape_entered"]

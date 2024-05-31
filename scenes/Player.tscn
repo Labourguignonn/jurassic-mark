@@ -267,7 +267,6 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="StandingHitBox" type="CollisionPolygon2D" parent="."]
-visible = false
 modulate = Color(0.160784, 1, 0.152941, 1)
 z_index = 1
 position = Vector2(19.277, 1.30319)
@@ -283,7 +282,6 @@ polygon = PackedVector2Array(-16.3744, 8.55456, -6.17747, 19.2115, -4.47799, 32.
 disabled = true
 
 [node name="hurtbox" parent="." instance=ExtResource("7_op46c")]
-visible = false
 position = Vector2(0, -10.3448)
 rotation = 3.14159
 scale = Vector2(1.59158, -1.37517)

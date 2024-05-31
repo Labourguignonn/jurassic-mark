@@ -20,7 +20,6 @@ var health = 50
 
 func _physics_process(delta):
 	var sprite = $AnimatedSprite2D
-	move_and_slide()
 	
 	if is_on_wall():
 		if $LeftRayCast.is_colliding(): 
@@ -61,6 +60,8 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("dash") and can_dash and !is_crouching: 
 		dash(sprite)
+	
+	move_and_slide()
 
 func gravityForce(delta):
 	if velocity.y < 2500:

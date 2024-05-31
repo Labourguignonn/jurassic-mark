@@ -269,7 +269,7 @@ visible = false
 z_index = 1
 position = Vector2(19.277, 1.30319)
 scale = Vector2(0.588412, 0.566248)
-polygon = PackedVector2Array(-14.0667, -19.9616, -14.0667, 25.9547, -22.5641, 37.2815, -32.7611, 34.7848, -44.6575, 37.2815, -51.4554, 25.9547, -51.4554, -19.9616, -32.7611, -23.4936)
+polygon = PackedVector2Array(-14.0667, -19.9616, -14.0667, 25.9547, -22.5641, 38.3168, -32.7611, 34.7848, -44.6575, 38.3168, -51.4554, 25.9547, -51.4554, -19.9616, -32.7611, -23.4936)
 
 [node name="CrouchHitBox" type="CollisionPolygon2D" parent="Player"]
 visible = false
@@ -285,12 +285,10 @@ position = Vector2(0, 4)
 target_position = Vector2(0, -20)
 
 [node name="LeftRayCast" type="RayCast2D" parent="Player"]
-visible = false
 position = Vector2(0, 4)
 target_position = Vector2(-24, 0)
 
 [node name="RightRayCast" type="RayCast2D" parent="Player"]
-visible = false
 position = Vector2(0, 4)
 target_position = Vector2(24, 0)
 

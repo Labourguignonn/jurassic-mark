@@ -12,7 +12,7 @@ texture = ExtResource("1_elhhk")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
-polygon = PackedVector2Array(-106, 45, -91, -2, -73, 8, -37, -36, 75, -53, 76, -22, 72, 1, 100, 4, 108, 41, 108, 50, -107, 50)
+polygon = PackedVector2Array(-96, 36, -91, 35, -89, 4, -69, 16, -35, -31, 31, -44, 76, -49, 70, 2, 90, 7, 101, 17, 105, 48, -105, 48)
 
 [node name="Hitbox" parent="." instance=ExtResource("3_ojl2d")]
 visible = false

@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 150.0
 const MAX_SPEED = 250.0
 const DASH_SPEED = 450.0
+const KNOCKBACK_SPEED = 200.0
 const JUMP_SPEED = -500.0
 const AIR_ACCELERATION = 2000.0
 const DRAG = 0.8 # Value must be between 0 and 1
@@ -16,7 +17,11 @@ var wall_jump 		= false
 var is_crouching 	= false
 var is_dashing 		= false
 var can_dash 		= true
-var health = 50
+var knockback_vector := Vector2.ZERO
+@export var max_health : int
+
+#import de classes
+@onready var healthcomp = HealthComponent.new(max_health)
 
 func _physics_process(delta):
 	var sprite = $AnimatedSprite2D
@@ -61,6 +66,10 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("dash") and can_dash and !is_crouching: 
 		dash(sprite)
+	
+	if knockback_vector != Vector2.ZERO:
+		velocity = knockback_vector
+	move_and_slide()
 
 func gravityForce(delta):
 	if velocity.y < 2500:
@@ -178,3 +187,21 @@ func _on_animation_timer_timeout():
 
 func _on_tolerance_timer_timeout():
 	if wall_jump and $AnimationTimer.is_stopped(): wall_jump = false 
+
+
+func _on_hurtbox_body_entered(body):
+	if body.name == "Enemy":
+		healthcomp.take_damage(10)
+		if $RightRayCast.is_colliding():
+			knockback(Vector2(-300,-200))
+		elif $LeftRayCast.is_colliding():
+			knockback(Vector2(300,-200))
+			
+func knockback(knockback_force := Vector2.ZERO):
+	if knockback_force != Vector2.ZERO:
+		knockback_vector = knockback_force
+		
+	var knockback_tween = get_tree().create_tween()
+	knockback_tween.parallel().tween_property(self, "knockback_vector", Vector2.ZERO, 0.25)
+	$AnimatedSprite2D.modulate = Color(1,0,0,1)
+	knockback_tween.parallel().tween_property($AnimatedSprite2D,"modulate", Color(1,1,1,1), 0.5)

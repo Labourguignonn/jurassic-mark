@@ -267,13 +267,14 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="StandingHitBox" type="CollisionPolygon2D" parent="."]
+visible = false
 modulate = Color(0.160784, 1, 0.152941, 1)
 z_index = 1
 position = Vector2(19.277, 1.30319)
 scale = Vector2(0.588412, 0.566248)
-polygon = PackedVector2Array(-14.0667, -19.9616, -14.0667, 25.9547, -22.5641, 37.2815, -32.7611, 34.7848, -44.6575, 37.2815, -51.4554, 25.9547, -51.4554, -19.9616, -32.7611, -23.4936)
+polygon = PackedVector2Array(-14.0667, -19.9616, -14.0667, 25.9547, -22.5641, 38.3168, -32.7611, 34.7848, -44.6575, 38.3168, -51.4554, 25.9547, -51.4554, -19.9616, -32.7611, -23.4936)
 
-[node name="CrouchHitBox" type="CollisionPolygon2D" parent="Player"]
+[node name="CrouchHitBox" type="CollisionPolygon2D" parent="."]
 visible = false
 z_index = 1
 position = Vector2(20.6349, 1.19048)
@@ -282,6 +283,7 @@ polygon = PackedVector2Array(-16.3744, 8.55456, -6.17747, 19.2115, -4.47799, 32.
 disabled = true
 
 [node name="hurtbox" parent="." instance=ExtResource("7_op46c")]
+visible = false
 position = Vector2(0, -10.3448)
 rotation = 3.14159
 scale = Vector2(1.59158, -1.37517)
@@ -299,13 +301,11 @@ position = Vector2(0, -3)
 target_position = Vector2(0, -20)
 
 [node name="LeftRayCast" type="RayCast2D" parent="."]
-visible = false
 position = Vector2(0, 4)
 target_position = Vector2(-24, 0)
 collision_mask = 6
 
 [node name="RightRayCast" type="RayCast2D" parent="."]
-visible = false
 position = Vector2(0, 4)
 target_position = Vector2(24, 0)
 collision_mask = 6
@@ -314,18 +314,17 @@ collision_mask = 6
 wait_time = 0.2
 one_shot = true
 
+[node name="DashCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ToleranceTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
+
 [node name="Health" parent="." instance=ExtResource("8_xgjp0")]
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
 [connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
-
-[node name="ToleranceTimer" type="Timer" parent="Player"]
-wait_time = 0.1
-one_shot = true
-
-[node name="DashCooldown" type="Timer" parent="Player"]
-wait_time = 0.75
-one_shot = true
-
-[connection signal="timeout" from="Player/AnimationTimer" to="Player" method="_on_animation_timer_timeout"]
-[connection signal="timeout" from="Player/ToleranceTimer" to="Player" method="_on_tolerance_timer_timeout"]
+[connection signal="timeout" from="ToleranceTimer" to="." method="_on_tolerance_timer_timeout"]

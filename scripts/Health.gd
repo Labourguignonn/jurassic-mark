@@ -1,16 +1,19 @@
-extends Node
-class_name Health
+extends Node2D
+class_name  HealthComponent
 
-@export var MAX_HEALTH := 10
-var health : float
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	health = MAX_HEALTH
+var max_health := 50
+var curr_health : int
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-##func damage(attack: Attack):
-	##health -= attack.attack_damage
-	##if health <= 0:
-		##get_parent().queue_free()
-##func cure(cure: Cure):
-	##health += cure.cure_amount
+func _init(max_health):
+	max_health = max_health
+	curr_health = max_health
+
+func take_damage(attack):
+	if curr_health <= 0:
+		pass
+		#animação de morte
+	else:
+		curr_health -= attack
+
+func heal(qt_heal):
+	curr_health += qt_heal

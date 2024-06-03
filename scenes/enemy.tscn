@@ -1,22 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://s8q4h0n6slvv"]
+[gd_scene load_steps=7 format=3 uid="uid://s8q4h0n6slvv"]
 
+[ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_83x4y"]
 [ext_resource type="Texture2D" uid="uid://yn116ow26xeg" path="res://assests/Rocks/ice_rock/ice_rock1.png" id="1_elhhk"]
-[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_fofsi"]
+[ext_resource type="PackedScene" uid="uid://5eq53rr3xkul" path="res://scenes/Health.tscn" id="2_mwwld"]
 [ext_resource type="PackedScene" uid="uid://b67r4gu5gn8ko" path="res://scenes/Hitbox.tscn" id="3_ojl2d"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_861bn"]
+size = Vector2(203, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w1fps"]
+size = Vector2(170, 15)
+
 [node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_fofsi")
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_83x4y")
+max_health = 30
+
+[node name="Health" parent="." instance=ExtResource("2_mwwld")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_elhhk")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PackedVector2Array(-96, 36, -91, 35, -89, 4, -69, 16, -35, -31, 31, -44, 76, -49, 70, 2, 90, 7, 101, 17, 105, 48, -105, 48)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 7.5)
+shape = SubResource("RectangleShape2D_861bn")
 
 [node name="Hitbox" parent="." instance=ExtResource("3_ojl2d")]
-visible = false
 scale = Vector2(0.63296, 0.689011)
+
+[node name="Hitbox2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-4.73964, -58.7799)
+scale = Vector2(1.57988, 1.45136)
+shape = SubResource("RectangleShape2D_w1fps")
+debug_color = Color(0.972549, 0, 0, 0.419608)
 
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_shape_entered" from="Hitbox" to="." method="_on_hitbox_body_shape_entered"]

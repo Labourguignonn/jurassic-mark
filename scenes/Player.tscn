@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b7slcwrxnpcnt"]
+[gd_scene load_steps=40 format=3 uid="uid://b7slcwrxnpcnt"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_wi1vh"]
 [ext_resource type="Texture2D" uid="uid://b1e2r7gf3qbdj" path="res://assests/Player/Shoom_Hide.png" id="2_py68m"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://rp5gq0s08o4d" path="res://assests/Player/Shoom_Peek.png" id="4_5j80g"]
 [ext_resource type="Texture2D" uid="uid://dvmh2ewopl7s1" path="res://assests/Player/Shoom_Pop.png" id="5_656sv"]
 [ext_resource type="Texture2D" uid="uid://c3jho0o2p2e54" path="res://assests/Player/Shoom_Walk.png" id="6_b44y8"]
-[ext_resource type="PackedScene" uid="uid://crimtpr01htj2" path="res://scenes/Camera_player.tscn" id="7_kg73w"]
+[ext_resource type="PackedScene" uid="uid://bimxubrbexdnh" path="res://scenes/Hurtbox.tscn" id="8_m0ese"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x2tus"]
 atlas = ExtResource("2_py68m")
@@ -246,23 +246,34 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb07o"]
+size = Vector2(26, 34.4828)
+
 [node name="PlayerScene" type="Node2D"]
 position = Vector2(5, 21)
 scale = Vector2(1, 1.16)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_as_relative = false
+collision_mask = 30
 script = ExtResource("1_wi1vh")
+max_health = 50
 
-[node name="Camera_Player" parent="Player" instance=ExtResource("7_kg73w")]
-position = Vector2(0, 2.58621)
-scale = Vector2(0.485565, 0.419433)
+[node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
+position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_vtt1i")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="Hurtbox" parent="Player" instance=ExtResource("8_m0ese")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hurtbox"]
+position = Vector2(0, 5.17241)
+shape = SubResource("RectangleShape2D_jb07o")
+debug_color = Color(0.761293, 0.183264, 0.0258424, 0.419608)
 
 [node name="StandingHitBox" type="CollisionPolygon2D" parent="Player"]
 visible = false
@@ -283,16 +294,19 @@ disabled = true
 visible = false
 position = Vector2(0, 4)
 target_position = Vector2(0, -20)
+collision_mask = 2
 
 [node name="LeftRayCast" type="RayCast2D" parent="Player"]
 visible = false
 position = Vector2(0, 4)
 target_position = Vector2(-24, 0)
+collision_mask = 7
 
 [node name="RightRayCast" type="RayCast2D" parent="Player"]
 visible = false
 position = Vector2(0, 4)
 target_position = Vector2(24, 0)
+collision_mask = 7
 
 [node name="AnimationTimer" type="Timer" parent="Player"]
 wait_time = 0.2
@@ -306,5 +320,6 @@ one_shot = true
 wait_time = 0.75
 one_shot = true
 
+[connection signal="body_entered" from="Player/Hurtbox" to="Player" method="_on_hurtbox_body_entered"]
 [connection signal="timeout" from="Player/AnimationTimer" to="Player" method="_on_animation_timer_timeout"]
 [connection signal="timeout" from="Player/ToleranceTimer" to="Player" method="_on_tolerance_timer_timeout"]

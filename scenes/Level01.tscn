@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://cykqfq18x8x01" path="res://TileSet.tres" id="1_dw6lt"]
 [ext_resource type="PackedScene" uid="uid://b7slcwrxnpcnt" path="res://scenes/Player.tscn" id="2_52ytw"]
-[ext_resource type="PackedScene" uid="uid://s8q4h0n6slvv" path="res://scenes/enemy.tscn" id="3_8wa3r"]
+[ext_resource type="PackedScene" uid="uid://s8q4h0n6slvv" path="res://scenes/Enemy.tscn" id="3_8wa3r"]
 
 [node name="Level01Scene" type="Node2D"]
 
@@ -18,4 +18,4 @@ layer_1/tile_data = PackedInt32Array()
 position = Vector2(646, 209)
 
 [node name="PlayerScene" parent="." instance=ExtResource("2_52ytw")]
-position = Vector2(1562, -649)
+position = Vector2(391, 217)

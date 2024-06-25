@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/Enemy.gd" id="1_83x4y"]
 [ext_resource type="Texture2D" uid="uid://yn116ow26xeg" path="res://assests/Rocks/ice_rock/ice_rock1.png" id="1_elhhk"]
-[ext_resource type="PackedScene" uid="uid://5eq53rr3xkul" path="res://scenes/Health.tscn" id="2_mwwld"]
-[ext_resource type="PackedScene" uid="uid://b67r4gu5gn8ko" path="res://scenes/Hitbox.tscn" id="3_ojl2d"]
+[ext_resource type="PackedScene" uid="uid://5eq53rr3xkul" path="res://scenes/health.tscn" id="2_mwwld"]
+[ext_resource type="PackedScene" uid="uid://b67r4gu5gn8ko" path="res://scenes/hitbox.tscn" id="3_ojl2d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_861bn"]
 size = Vector2(203, 81)

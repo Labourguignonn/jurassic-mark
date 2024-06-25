@@ -3,7 +3,7 @@ extends CharacterBody2D
 const SPEED = 150.0
 const MAX_SPEED = 250.0
 const DASH_SPEED = 450.0
-const JUMP_SPEED = -500.0
+const JUMP_SPEED = -400.0
 const KNOCKBACK_SPEED = 200.0
 const AIR_ACCELERATION = 2000.0
 const DRAG = 0.8 # Value must be between 0 and 1
@@ -27,6 +27,7 @@ func _physics_process(delta):
 	
 	if is_on_wall():
 		if $LeftRayCast.is_colliding(): 
+			$AnimatedSprite2D.play("wall_slide")
 			wall_direction = 1 # To the right
 		if $RightRayCast.is_colliding(): 
 			wall_direction = -1 # To the left
@@ -58,10 +59,6 @@ func _physics_process(delta):
 	if !is_moving() and !is_crouching:
 		sprite.play("idle")
 	
-	# Peek Action
-	if !sprite.is_playing() and is_crouching:
-		sprite.play("peek")
-	
 	if Input.is_action_just_pressed("dash") and can_dash and !is_crouching: 
 		dash(sprite)
 	
@@ -69,6 +66,11 @@ func _physics_process(delta):
 		velocity = knockback_vector
 	
 	move_and_slide()
+	
+	for platforms in get_slide_collision_count():
+		var collision = get_slide_collision(platforms)
+		if collision.get_collider().has_method("has_collided_with"):
+			collision.get_collider().has_collided_with(collision,self)
 
 func gravityForce(delta):
 	if velocity.y < 2500:
@@ -130,6 +132,7 @@ func move(sprite:AnimatedSprite2D, delta:float):
 			accelerate(sprite, delta, SPEED, 4)
 			sprite.play("walk")
 		elif is_on_floor() and is_crouching:
+			sprite.play("crouch_walking")
 			accelerate(sprite, delta, SPEED/2, 4)
 		else:
 			apply_drag(delta)
@@ -155,6 +158,7 @@ func jump(sprite:AnimatedSprite2D, delta):
 	elif double_jump: double_jump = false
 	else: return
 	velocity.y = JUMP_SPEED
+	sprite.play("jump")
 
 func stop_jump():
 	if velocity.y <= -200:
@@ -162,17 +166,20 @@ func stop_jump():
 
 func crouch(sprite,delta):
 	apply_drag(delta)
-	sprite.play("hide")
+	if is_moving():
+		sprite.play("hide_transition")
+	elif !is_moving():
+		sprite.play("crouch_idle")
 	is_crouching = true
 
 func pop(sprite,delta):
-	sprite.play("pop")
 	await get_tree().create_timer(delta * 8).timeout
 	is_crouching = false
 	$CrouchHitBox.disabled = true
 	$StandingHitBox.disabled = false
 
 func dash(sprite):
+	sprite.play("dash")
 	is_dashing = true
 	can_dash = false
 	velocity.y = 0

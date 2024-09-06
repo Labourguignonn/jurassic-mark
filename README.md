@@ -1,7 +1,1 @@
-CHARACTER DEV
-- Walk
-- Crouch
-- Jump
-- Doublejump
-- Walljump
-- Drag
+*A game I'm developing in Godot*

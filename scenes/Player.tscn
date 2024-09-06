@@ -518,80 +518,79 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jb07o"]
 size = Vector2(26, 34.4828)
 
-[node name="PlayerScene" type="Node2D"]
-position = Vector2(5, 21)
-scale = Vector2(1, 1.16)
-
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
 z_as_relative = false
 scale = Vector2(1, 0.965517)
 collision_mask = 30
 script = ExtResource("1_wi1vh")
 max_health = 50
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
 position_smoothing_enabled = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.2, 1)
 sprite_frames = SubResource("SpriteFrames_vtt1i")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
 
-[node name="Hurtbox" parent="Player" instance=ExtResource("8_m0ese")]
-visible = false
+[node name="Hurtbox" parent="." instance=ExtResource("8_m0ese")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Hurtbox"]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2(0, 5.17241)
 shape = SubResource("RectangleShape2D_jb07o")
 debug_color = Color(0.761293, 0.183264, 0.0258424, 0.419608)
 
-[node name="StandingHitBox" type="CollisionPolygon2D" parent="Player"]
+[node name="StandingHitBox" type="CollisionPolygon2D" parent="."]
 visible = false
 z_index = 1
 position = Vector2(19, -1.78572)
 scale = Vector2(0.584114, 0.510852)
 polygon = PackedVector2Array(-14.0667, -19.9616, -14.0667, 25.9547, -20.5439, 33.2079, -34.2399, 31.4601, -51.3598, 31.4601, -51.4554, 25.9547, -51.4554, -19.9616, -32.7611, -23.4936)
 
-[node name="CrouchHitBox" type="CollisionPolygon2D" parent="Player"]
+[node name="CrouchHitBox" type="CollisionPolygon2D" parent="."]
+visible = false
 z_index = 1
 position = Vector2(21, -3.57143)
 scale = Vector2(0.588412, 0.566248)
 polygon = PackedVector2Array(-18.6944, 1.5768, -3.39898, 9.46078, -15.2954, 26.8055, -20.3939, 31.5359, -47.5857, 33.1127, -62.8811, 33.1127, -54.3837, 18.9216, -48.6647, 7.03214, -28.8913, 1.5768)
 disabled = true
 
-[node name="CrouchRayCast" type="RayCast2D" parent="Player"]
+[node name="CrouchRayCast" type="RayCast2D" parent="."]
 position = Vector2(1, 1.32143)
 scale = Vector2(1, 0.839334)
 target_position = Vector2(0, -20)
 collision_mask = 2
 
-[node name="LeftRayCast" type="RayCast2D" parent="Player"]
-visible = false
+[node name="LeftRayCast" type="RayCast2D" parent="."]
 position = Vector2(0, 4)
 target_position = Vector2(-24, 0)
 collision_mask = 7
 
-[node name="RightRayCast" type="RayCast2D" parent="Player"]
-visible = false
+[node name="RightRayCast" type="RayCast2D" parent="."]
 position = Vector2(0, 4)
 target_position = Vector2(24, 0)
 collision_mask = 7
 
-[node name="AnimationTimer" type="Timer" parent="Player"]
+[node name="DownRayCast" type="RayCast2D" parent="."]
+position = Vector2(0, 4.14286)
+rotation = 1.57517
+target_position = Vector2(12.4285, -0.0543989)
+collision_mask = 7
+
+[node name="AnimationTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
 
-[node name="ToleranceTimer" type="Timer" parent="Player"]
+[node name="ToleranceTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
 
-[node name="DashCooldown" type="Timer" parent="Player"]
+[node name="DashCooldown" type="Timer" parent="."]
 wait_time = 0.75
 one_shot = true
 
-[connection signal="body_entered" from="Player/Hurtbox" to="Player" method="_on_hurtbox_body_entered"]
-[connection signal="timeout" from="Player/AnimationTimer" to="Player" method="_on_animation_timer_timeout"]
-[connection signal="timeout" from="Player/ToleranceTimer" to="Player" method="_on_tolerance_timer_timeout"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
+[connection signal="timeout" from="ToleranceTimer" to="." method="_on_tolerance_timer_timeout"]

@@ -210,3 +210,9 @@ func _on_hurtbox_body_entered(body):
 			knockback(Vector2(-300,-200))
 		if $LeftRayCast.is_colliding():
 			knockback(Vector2(300,-200))
+		
+	if body.name == "spike_area":
+		print("xx")
+		health_comp.take_damage(20)
+		if $DownRayCast.is_colliding():
+			knockback(Vector2(0,-200))		

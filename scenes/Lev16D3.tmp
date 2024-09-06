@@ -6924,7 +6924,7 @@ position = Vector2(2521, 82)
 scale = Vector2(1, 1.00489)
 
 [node name="PlayerScene" parent="." instance=ExtResource("2_52ytw")]
-position = Vector2(2216, 24)
+position = Vector2(2221, 16)
 scale = Vector2(0.7, 0.94)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -6964,8 +6964,8 @@ centered = false
 
 [node name="spike_area" type="Area2D" parent="."]
 position = Vector2(2424, 216)
-collision_layer = 4
-collision_mask = 35
+collision_layer = 34
+collision_mask = 3
 script = ExtResource("13_m510y")
 
 [node name="sprite" type="Sprite2D" parent="spike_area"]
